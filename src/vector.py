@@ -1,14 +1,20 @@
 
+import math
+
 
 class Vector2D:
 
-    def __init__(self, x: float =0, y: float =0)-> None:
+    EPSILON = 1e-14
+
+    def __init__(self, x: float =0, y: float =0, epsilon: float =EPSILON)-> None:
         self.x = x
         self.y = y
+        self.epsilon = epsilon
 
     def __eq__(self, other):
         assert other is not None
-        return self.x == other.x and self.y == other.y
+        return math.isclose(self.x, other.x, abs_tol=self.epsilon) and \
+               math.isclose(self.y, other.y, abs_tol=self.epsilon)
 
 
 if __name__ == '__main__':

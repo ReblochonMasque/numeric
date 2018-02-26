@@ -25,6 +25,9 @@ class TestVector2D(unittest.TestCase):
         other = Vector2D(0, 1)
         self.assertEqual(other, self.unity)
 
+    def test_inequality(self):
+        self.assertNotEqual(self.unitx, self.unity)
+
 
 if __name__ == '__main__':
     unittest.main()
