@@ -1,0 +1,11 @@
+
+
+class Vector2D:
+
+    def __init__(self, x: float =0, y: float =0)-> None:
+        self.x = x
+        self.y = y
+
+
+if __name__ == '__main__':
+    v = Vector2D()
