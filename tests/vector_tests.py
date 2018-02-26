@@ -41,6 +41,26 @@ class TestVector2D(unittest.TestCase):
         expected = Vector2D(1, 1)
         self.assertEqual(result, expected)
 
+    def test_mul_1(self):
+        result = self.unitx * 2
+        expected = Vector2D(2, 0)
+        self.assertEqual(result, expected)
+
+    def test_mul_2(self):
+        result = self.unity * 2
+        expected = Vector2D(0, 2)
+        self.assertEqual(result, expected)
+
+    def test_rmul_1(self):
+        result = 2 * self.unitx
+        expected = Vector2D(2, 0)
+        self.assertEqual(result, expected)
+
+    def test_rmul_2(self):
+        result = 2 * self.unity
+        expected = Vector2D(0, 2)
+        self.assertEqual(result, expected)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -25,6 +25,16 @@ class Vector2D:
         y = self.y + other.y
         return Vector2D(x, y)
 
+    def __mul__(self, scalar):
+        """scalar multiplication"""
+        x = self.x * scalar
+        y = self.y * scalar
+        return Vector2D(x, y)
+
+    def __rmul__(self, scalar):
+        """scalar multiplication on right"""
+        return self * scalar
+
 
 if __name__ == '__main__':
     v = Vector2D()
