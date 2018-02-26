@@ -36,6 +36,11 @@ class TestVector2D(unittest.TestCase):
         self.assertEqual(self.unity[0], 0)
         self.assertEqual(self.unity[1], 1)
 
+    def test_add(self):
+        result = self.unitx + self.unity
+        expected = Vector2D(1, 1)
+        self.assertEqual(result, expected)
+
 
 if __name__ == '__main__':
     unittest.main()

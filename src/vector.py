@@ -20,6 +20,11 @@ class Vector2D:
     def __getitem__(self, ndx):
         return self.v[ndx]
 
+    def __add__(self, other):
+        x = self.x + other.x
+        y = self.y + other.y
+        return Vector2D(x, y)
+
 
 if __name__ == '__main__':
     v = Vector2D()
