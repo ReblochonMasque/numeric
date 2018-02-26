@@ -3,6 +3,7 @@ import math
 
 
 class Vector2D:
+    """represents 2D vectors anchored at origin"""
 
     EPSILON = 1e-14
 
@@ -40,6 +41,12 @@ class Vector2D:
         a, b = self.v
         c, d = other.v
         return a * c + b * d
+
+    def cross(self, other):
+        """cross product"""
+        a, b = self.v
+        c, d = other.v
+        return a * d - b * c
 
 
 if __name__ == '__main__':
