@@ -9,6 +9,10 @@ class TestVector2D(unittest.TestCase):
         self.nullvector = Vector2D()
         self.unitx = Vector2D(1, 0)
         self.unity = Vector2D(0, 1)
+        self.v_1_1 = Vector2D(1, 1)
+        self.v_m1_1 = Vector2D(-1, 1)
+        self.v_m1_m1 = Vector2D(-1, -1)
+        self.v_1_m1 = Vector2D(1, -1)
 
     def test_instance(self):
         self.assertIsInstance(Vector2D(), Vector2D)
@@ -59,6 +63,36 @@ class TestVector2D(unittest.TestCase):
     def test_rmul_2(self):
         result = 2 * self.unity
         expected = Vector2D(0, 2)
+        self.assertEqual(result, expected)
+
+    def test_dot_1(self):
+        result = self.unitx.dot(self.unity)
+        expected = 0
+        self.assertEqual(result, expected)
+
+    def test_dot_2(self):
+        result = self.unity.dot(self.unitx)
+        expected = 0
+        self.assertEqual(result, expected)
+
+    def test_dot_3(self):
+        result = self.unity.dot(self.nullvector)
+        expected = 0
+        self.assertEqual(result, expected)
+
+    def test_dot_4(self):
+        result = self.v_1_1.dot(self.v_1_1)
+        expected = 2
+        self.assertEqual(result, expected)
+
+    def test_dot_5(self):
+        result = self.v_m1_m1.dot(self.v_1_1)
+        expected = -2
+        self.assertEqual(result, expected)
+
+    def test_dot_6(self):
+        result = self.v_1_m1.dot(self.v_m1_1)
+        expected = -2
         self.assertEqual(result, expected)
 
 

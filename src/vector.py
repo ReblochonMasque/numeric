@@ -35,6 +35,12 @@ class Vector2D:
         """scalar multiplication on right"""
         return self * scalar
 
+    def dot(self, other):
+        """dot product"""
+        a, b = self.v
+        c, d = other.v
+        return a * c + b * d
+
 
 if __name__ == '__main__':
     v = Vector2D()
