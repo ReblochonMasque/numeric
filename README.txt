@@ -5,4 +5,5 @@ geometry.
 If you need speed, you should use numpy or scipy.
 If you need millions of points, and objects, this is probably not suitable.
 
-Emphasis is put on the clarity of the implementation.
+Emphasis is put on the clarity of the implementation, lightness, and
+ease of use.
