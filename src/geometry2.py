@@ -51,6 +51,8 @@ class Normal(Vec):
 
 if __name__ == '__main__':
 
+    vec = Vec(0, 0)
+
     a = Point(1, 2)
     b = Point(5, -2)
     v = Vector(-1, -1)
