@@ -1,4 +1,4 @@
-from src.vector import Vector2D
+from numeric.src.vector import Vector2D
 
 import random
 import tkinter as tk

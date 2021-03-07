@@ -1,5 +1,5 @@
 import math
-from src.geometry import Point2D
+from numeric.src.geometry import Point2D
 import turtle
 
 
@@ -78,14 +78,14 @@ if __name__ == '__main__':
     #
     # screen.mainloop()
 
-    dragon = DragonCurve(level=3)
+    dragon = DragonCurve(level=15)
     print('done')
 
     screen = turtle.Turtle().screen
     screen.clear()
 
     origin = Point2D(0, 0)
-    scaling_to_sreen = 50
+    scaling_to_sreen = 2
 
     t = turtle.Turtle()
     t.hideturtle()

@@ -1,4 +1,4 @@
-from src.geometry import Point2D, LineSegment
+from numeric.src.geometry import Point2D, LineSegment
 import tkinter as tk
 from tkinter import ttk
 

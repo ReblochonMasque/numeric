@@ -1,6 +1,6 @@
 import random
 import tkinter as tk
-from src.geometry import Point2D
+from numeric.src.geometry import Point2D
 from typing import NamedTuple
 from copy import deepcopy
 

@@ -5,8 +5,8 @@ Tests for geometry.Point
 
 from fractions import Fraction
 import math
-from src.geometry import Point
-from src.geometry import Point2D
+from numeric.src.geometry import Point
+from numeric.src.geometry import Point2D
 import unittest
 
 import io

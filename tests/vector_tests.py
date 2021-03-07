@@ -1,5 +1,5 @@
 import unittest
-from src import Vector2D
+from numeric.src import Vector2D
 
 
 class TestVector2D(unittest.TestCase):

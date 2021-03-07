@@ -1,4 +1,4 @@
-from src.geometry import Point2D
+from numeric.src.geometry import Point2D
 import tkinter as tk
 
 
