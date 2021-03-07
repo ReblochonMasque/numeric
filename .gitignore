@@ -48,6 +48,12 @@ coverage.xml
 *.cover
 .hypothesis/
 
+tests/.cache/
+tests/.cache/*.*
+tests/.pytest_cache/
+tests/.pytest_cache/*.*
+
+
 # Translations
 *.mo
 *.pot
