@@ -17,7 +17,7 @@ class Point:
     or a Vertex of a polygon or a polyhedron.
     """
 
-    def __init__(self, x: Number =0, y: Number =0, z: Number =0) -> None:
+    def __init__(self, x: Number = 0, y: Number = 0, z: Number = 0) -> None:
         """
         :param x: a Number representing the x coordinate
         :param y: a Number representing the y coordinate
