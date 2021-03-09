@@ -2,28 +2,28 @@
 └── numeric
     ├── README.txt
     ├── clients
-    │   ├── __init__.py
-    │   ├── ballistic.py
-    │   └── tkexample.py
+    │   ├── __init__.py
+    │   ├── ballistic.py
+    │   └── tkexample.py
     ├── draw_affinegrid.py
     ├── resources
-    │   ├── Linkages
-    │   ├── USS_Enterprise.png
-    │   ├── satellite.gif
-    │   └── satellite_2.png
+    │   ├── Linkages
+    │   ├── USS_Enterprise.png
+    │   ├── satellite.gif
+    │   └── satellite_2.png
     ├── src
-    │   ├── __init__.py
-    │   ├── geometry.py
-    │   ├── geometry2.py
-    │   ├── geometry_affineplane.py
-    │   ├── geometry_symmetry.py
-    │   ├── koch.py
-    │   ├── linkage.py
-    │   ├── satellite_image.py
-    │   ├── satelliteimagerotate.py
-    │   ├── satelliteorbits.py
-    │   ├── vector.py
-    │   └── worldtoscren.py
+    │   ├── __init__.py
+    │   ├── geometry.py
+    │   ├── geometry2.py
+    │   ├── geometry_affineplane.py
+    │   ├── geometry_symmetry.py
+    │   ├── koch.py
+    │   ├── linkage.py
+    │   ├── satellite_image.py
+    │   ├── satelliteimagerotate.py
+    │   ├── satelliteorbits.py
+    │   ├── vector.py
+    │   └── worldtoscren.py
     └── tests
         ├── __init__.py
         ├── testgeometry.py
@@ -34,20 +34,20 @@
     ├── README.md
     ├── README.rst
     ├── coordinates
-    │   ├── __init__.py
-    │   ├── coordinatesystem.py
-    │   ├── matrix.py
-    │   └── vector.py
+    │   ├── __init__.py
+    │   ├── coordinatesystem.py
+    │   ├── matrix.py
+    │   └── vector.py
     ├── gui
-    │   ├── __init__.py
-    │   └── trianglegui.py
+    │   ├── __init__.py
+    │   └── trianglegui.py
     ├── gui3d
-    │   ├── __init__.py
-    │   ├── references.txt
-    │   └── vector3dgui.py
+    │   ├── __init__.py
+    │   ├── references.txt
+    │   └── vector3dgui.py
     ├── model
-    │   ├── __init__.py
-    │   └── trianglesolver.py
+    │   ├── __init__.py
+    │   └── trianglesolver.py
     └── tests
         ├── __init__.py
         └── testtriangle.py
@@ -56,12 +56,12 @@
 └── springforces
     ├── docs
     ├── src
-    │   ├── __init__.py
-    │   ├── particle.py
-    │   ├── spring.py
-    │   ├── springgui.py
-    │   ├── springsgui.py
-    │   └── vector.py
+    │   ├── __init__.py
+    │   ├── particle.py
+    │   ├── spring.py
+    │   ├── springgui.py
+    │   ├── springsgui.py
+    │   └── vector.py
     └── tests
         └── __init__.py
         
@@ -69,13 +69,13 @@
 └── otk
     ├── README
     ├── notes
-    │   └── notes\ matrix
+    │   └── notes\ matrix
     ├── src
-    │   ├── __init__.py
-    │   ├── canvas.py
-    │   ├── matrix.py
-    │   ├── pan.py
-    │   └── vector.py
+    │   ├── __init__.py
+    │   ├── canvas.py
+    │   ├── matrix.py
+    │   ├── pan.py
+    │   └── vector.py
     └── tests
         ├── __init__.py
         ├── test_matrix.py
@@ -85,9 +85,9 @@
 └── splines
     ├── __init__.py
     ├── src
-    │   ├── __init__.py
-    │   ├── splines.py
-    │   └── vecutils.py
+    │   ├── __init__.py
+    │   ├── splines.py
+    │   └── vecutils.py
     └── tests
         ├── __init__.py
         └── testsplines.py
@@ -95,15 +95,15 @@
 .
 └── nompy
     ├── clients
-    │   ├── __init__.py
-    │   ├── floatingtkwindow.py
-    │   ├── mattry.py
-    │   ├── numberline.py
-    │   └── unitcircle.py
+    │   ├── __init__.py
+    │   ├── floatingtkwindow.py
+    │   ├── mattry.py
+    │   ├── numberline.py
+    │   └── unitcircle.py
     ├── src
-    │   ├── __init__.py
-    │   ├── matrix.py
-    │   └── vector.py
+    │   ├── __init__.py
+    │   ├── matrix.py
+    │   └── vector.py
     └── tests
         ├── __init__.py
         └── tests_matrix.py
