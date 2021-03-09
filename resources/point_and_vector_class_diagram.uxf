@@ -4,10 +4,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>330</x>
+      <x>250</x>
       <y>20</y>
-      <w>290</w>
-      <h>250</h>
+      <w>370</w>
+      <h>270</h>
     </coordinates>
     <panel_attributes>/AbstractVector2D(ABC)/
 --
@@ -19,11 +19,14 @@ __hash__() -&gt; int
 __bool__() -&gt; bool
 __str__() -&gt; str
 __repr__() -&gt; str
+-
 clone(self) -&gt; new Point2D or Vector2D
+det(Point or Vector) -&gt; float  [ad-bc determinant?]
 -
 -
 class attr: EPSILON: float = 1e-14
 -
+coord_system: CoordSystem
 x: int, float
 y: int, float
 </panel_attributes>
@@ -32,9 +35,9 @@ y: int, float
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>140</x>
-      <y>350</y>
-      <w>300</w>
+      <x>110</x>
+      <y>410</y>
+      <w>320</w>
       <h>340</h>
     </coordinates>
     <panel_attributes>Point2D
@@ -53,26 +56,29 @@ __rsub__(Point2D) -&gt; new Vector2D
 
 __isub__(Vector2D) -&gt; new self (Point2D)
 -
-is_origin() -&gt; bool</panel_attributes>
+is_origin() -&gt; bool
+-
+distance_from(Point2D) -&gt; float
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>260</x>
-      <y>260</y>
-      <w>140</w>
-      <h>110</h>
+      <x>250</x>
+      <y>280</y>
+      <w>150</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>120.0;10.0;10.0;90.0</additional_attributes>
+    <additional_attributes>130.0;10.0;10.0;130.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>510</x>
-      <y>350</y>
-      <w>330</w>
+      <y>410</y>
+      <w>350</w>
       <h>620</h>
     </coordinates>
     <panel_attributes>Vector2D
@@ -112,7 +118,7 @@ __ifloordiv__(float) -&gt; self (Vector2D)
 normal() -&gt; new Vector2D (Vector2D)
 perp() -&gt; self (Vector2D)
 dot(Vector2D) -&gt; float
-det(Vector2D) -&gt; float  [ad-bc determinant?]
+# det(Vector2D) -&gt; float  [ad-bc determinant?]
 angle(Vector2D) -&gt; float [between two vectors]
 isnull() -&gt; bool
 -
@@ -127,12 +133,12 @@ dir</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>470</x>
-      <y>260</y>
+      <y>280</y>
       <w>150</w>
-      <h>110</h>
+      <h>150</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;130.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;130.0;130.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
