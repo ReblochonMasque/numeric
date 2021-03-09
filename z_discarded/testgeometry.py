@@ -1,12 +1,13 @@
 """
 Tests for geometry.Point
+check the tests for mid_point, distance_from_point, etc.
 """
 
 
 from fractions import Fraction
 import math
-from numeric.src.geometry import Point
-from numeric.src.geometry import Point2D
+from numeric.z_discarded._geometry import Point
+from numeric.z_discarded._geometry import Point2D
 import unittest
 
 import io
