@@ -87,7 +87,7 @@ if __name__ == '__main__':
 
     def direction(event, _direct=deque([Point(0, 0) for _ in range(_maxlen)],
                                        maxlen=_maxlen)) -> None:
-        """stores with_previous position, and uses it to calculate the direction
+        """stores the previous position, and uses it to calculate the direction
         from the current position.
         updates these variables
         """
