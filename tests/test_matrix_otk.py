@@ -3,7 +3,7 @@ import unittest
 
 from fractions import Fraction
 from numbers import Number
-from otk.src.matrix import Matrix, MatrixComplex, MatrixShape, identity, zeros
+from numeric.src.matrix_otk import Matrix, MatrixComplex, MatrixShape, identity, zeros
 from typing import Sequence
 
 
