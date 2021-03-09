@@ -3,7 +3,7 @@ import turtle
 if __name__ == '__main__':
 
     screen = turtle.Screen()
-    path = '/Volumes/Extended/Docs/projects/threedee/threedee/resources/'
+    path = '../resources/'
     gif_name = path + 'satellite.gif'
     screen.register_shape(gif_name)
 
