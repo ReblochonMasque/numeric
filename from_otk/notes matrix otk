@@ -1,0 +1,56 @@
+Matrix
+
+The Numeric module is for mathematics with two-dimensional matrices.
+It provides some of the basic operations of linear algebra.
+Matrices are restricted to only contain numbers.
+This module is not a part of standard Python, rather it is a smaller module than the
+common NumPy module.
+To use these operations, first import the module with import numeric.
+
+Returns a 2-dimensional matrix object corresponding to the given data, which must be a sequence of sequences.
+
+
+
+
+Create a Matrix
+Shape of Matrix a_matrix.shape()
+Get Matrix Value at Specified Indices a_matrix[]
+Set Matrix Value at Specified Indices a_matrix[]=
+Matrix equality
+Matrix Addition +
+Matrix Subtraction -
+Matrix Multiplication *
+Transpose Matrix a_matrix.transpose()
+Absolute Value of Matrix a_matrix.abs()
+Matrix Multiplication by a Number a_matrix.scale()
+clone Matrix a_matrix.clone()
+Sum Elements in Matrix a_matrix.summation()
+__str__()
+__repr__()
+
+Create an Identity Matrix numeric.identity(size)
+Create a zeros Matrix: zeros(shape)
+
+Get One Row of Matrix a_matrix.getrow()
+Get One Column of Matrix a_matrix.getcol()
+Invert Matrix a_matrix.inverse()
+
+
+class LaPetiteMaisonDansLaPrairieItem(Item):
+    """an OOP representation of a vector
+    a composite of several tk.Canvas items that can be manipulated as one
+    """
+
+    # at means anchor = lower left point
+    # body: rectangle at (-1, -1) of width=2 and height=2
+    # roof: triangle at (-1, 1) of horizontal base=2 and height=0.5
+    # door: rectangle at (0, -1) of width=0.5 and height=1
+    #     door_knob: point in rectangle at 2/5th of height and 1/10th of right edge
+    # window: rectangle at (-0.8, -0.2) of width=.6 and height=.8
+    #     left_pane:  rectangle at (-0.8, -0.2) of width=.3 and height=.8
+    #     right_pane: rectangle at (-0.8, -0.2) of width=.3 and height=.8
+
+    def __init__(self, canvas, anchor):  # here coords is anchor point
+
+        super().__init__(canvas, (self.tail, self.tip))
+        self.tags.append(self.canvas.create_line(*self.coords, fill='red', width=2, arrow='last'))
