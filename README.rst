@@ -1,5 +1,8 @@
 Work In Progress - Do not use as is.
+====================================
 
+Point Vector Matrix
+===================
 
 This package provides a pure python, simple, clear, readable, and tested
 implementation of point, vector and matrix operations commonly used in
