@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>50</y>
+      <w>290</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>/AbstractVector2D(ABC)/
+--
+__init__(x=0, y=0) -&gt; None
+__iter__() -&gt; Iterator
+__eq__() -&gt; bool
+__hash__() -&gt; int
+__str__() -&gt; str
+__repr__() -&gt; str
+clone(self) -&gt; new Point2D or Vector2D
+
+--
+x: int, float
+y: int, float
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>140</x>
+      <y>350</y>
+      <w>300</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>Point2D
+--
+__add__(Vector2D) -&gt; new Point2D
+__radd__(Vector2D) -&gt; new Point2D
+__iadd__(Vector2D) -&gt; self
+-
+__sub__(Vector2D) -&gt; new Point2D
+__sub__(Point2D) -&gt; new Vector2D
+
+__rsub__(Vector2D) -&gt; new Point2D
+__rsub__(Point2D) -&gt; new Vector2D
+
+__isub__(Vector2D) -&gt; new self (Point2D)
+-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>260</x>
+      <y>260</y>
+      <w>140</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>350</y>
+      <w>290</w>
+      <h>500</h>
+    </coordinates>
+    <panel_attributes>Vector2D
+--
+__add__(Vector2D) -&gt; new Vector2D
+__add__(Point2D) -&gt; new Point2D
+
+__radd__(Vector2D) -&gt; new Vector2D
+__radd__(Point2D) -&gt; new Point2D
+
+__iadd__(Vector2D) -&gt; self
+-
+__sub__(Vector2D) -&gt; new Vector2D
+__sub__(Point2D) -&gt; new Point2D
+
+__rsub__(Vector2D) -&gt; new Vector2D
+__rsub__(Point2D) -&gt; new Point2D
+
+__isub__(Vector2D) -&gt; self (Vector2D)
+-
+__neg__() -&gt; new Vector2D
+-
+__mul__(float) -&gt; new Vector2D
+__rmul__(float) -&gt; new Vector2D
+__imul__(float) -&gt; self (Vector2D)
+-
+__abs__() -&gt; float
+-
+__truediv__(float) -&gt; new Vector2D
+__itruediv__(float) -&gt; self (Vector2D)
+
+__floordiv__(float) -&gt; new Vector2D
+__ifloordiv__(float) -&gt; self (Vector2D)
+-
+normalize() -&gt; self (Vector2D)
+-
+perp() -&gt; self (Vector2D)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>260</y>
+      <w>150</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;90.0</additional_attributes>
+  </element>
+</diagram>
