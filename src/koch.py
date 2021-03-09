@@ -61,43 +61,44 @@ class KochCurve:
 
 if __name__ == '__main__':
 
-    # k = KochCurve(level=2)
-    # print('done')
-    #
-    # screen = turtle.Turtle().screen
-    # origin = Point2D(0, 0)
-    # scaling_to_sreen = 250
-    #
-    # t = turtle.Turtle()
-    # t.penup()
-    # t.goto(k.points[-1][0] * scaling_to_sreen + origin)
-    #
-    # for point in k.points[-1]:
-    #     t.pendown()
-    #     t.goto(point * scaling_to_sreen + origin)
-    #
-    # screen.mainloop()
-
-    dragon = DragonCurve(level=15)
+    k = KochCurve(level=7)
     print('done')
 
     screen = turtle.Turtle().screen
-    screen.clear()
-
     origin = Point2D(0, 0)
-    scaling_to_sreen = 2
+    scaling_to_sreen = 500
 
     t = turtle.Turtle()
-    t.hideturtle()
     t.penup()
-    t.goto(dragon.points[0] * scaling_to_sreen + origin)
+    t.goto(k.points[-1][0] * scaling_to_sreen + origin)
 
-    for point in dragon.points:
+    for point in k.points[-1]:
         t.pendown()
-        t.goto((point * scaling_to_sreen) + origin)
-
-    t.hideturtle()
-    t.clearstamps()
+        t.goto(point * scaling_to_sreen + origin)
 
     screen.mainloop()
+
+    # dragon = DragonCurve(level=15)
+    # print('done')
+    #
+    # screen = turtle.Turtle().screen
+    # screen.clear()
+    #
+    # origin = Point2D(0, 0)
+    # scaling_to_sreen = 2
+    #
+    # t = turtle.Turtle()
+    # t.speed(1)
+    # t.hideturtle()
+    # t.penup()
+    # t.goto(dragon.points[0] * scaling_to_sreen + origin)
+    #
+    # for point in dragon.points:
+    #     t.pendown()
+    #     t.goto((point * scaling_to_sreen) + origin)
+    #
+    # t.hideturtle()
+    # t.clearstamps()
+    #
+    # screen.mainloop()
 
