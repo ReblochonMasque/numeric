@@ -162,15 +162,15 @@ class Vector2D(AbstractVector2D):
         self.x, self.y = self.x * factor, self.y * factor
         return self
 
-    def __truediv__(self, scalar: float) -> 'Vector2D':
-        """returns a new Vector2D equal to self scaled by scalar
+    def __truediv__(self, divisor: Scalar) -> 'Vector2D':
+        """returns a new Vector2D equal to self scaled by divisor
 
-        :param scalar: a float
-        :return: new Vector2D equal to self divided by scalar
+        :param divisor: a float
+        :return: new Vector2D equal to self divided by divisor
         """
-        if scalar == 0:
+        if divisor == 0:
             raise ValueError
-        return Vector2D(self.x / scalar, self.y / scalar)
+        return Vector2D(self.x / divisor, self.y / divisor)
 
     def __itruediv__(self, scalar: float) -> 'Vector2D':
         """returns self divided by scalar
