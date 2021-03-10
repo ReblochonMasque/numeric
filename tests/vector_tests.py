@@ -49,6 +49,9 @@ class TestVector2D(unittest.TestCase):
     def test_bool_2(self):
         self.assertTrue(Vector2D(1, 0))
 
+    def test_bool_3(self):
+        self.assertTrue(Vector2D(0, -2))
+
     def test_add(self):
         actual = Vector2D(1, 0) + Vector2D(0, 1)
         expected = Vector2D(1, 1)

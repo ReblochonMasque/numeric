@@ -57,8 +57,8 @@ class AbstractVector2D(ABC):
 
         :return: bool, True if both values are not null/zero, False if they are
         """
-        return not math.isclose(self.x, 0, abs_tol=self.EPSILON) or \
-               not math.isclose(self.x, 0, abs_tol=self.EPSILON)
+        return not (math.isclose(self.x, 0, abs_tol=self.EPSILON) and \
+                    math.isclose(self.y, 0, abs_tol=self.EPSILON))
 
     def __str__(self):
         return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
