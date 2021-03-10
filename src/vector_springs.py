@@ -4,6 +4,9 @@ from abc import ABC
 from typing import Iterator, Union
 
 
+Scalar = Union[int, float]
+
+
 class AbstractVector2D(ABC):
     EPSILON = 1e-14
 
