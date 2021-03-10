@@ -4,8 +4,11 @@ from numeric.src.vector import Vector2D
 
 class TestAbstractVector2D(unittest.TestCase):
 
-    def test_instance(self):
+    def test_instance_0(self):
         self.assertIsInstance(Vector2D(), Vector2D)
+
+    def test_instance_1(self):
+        self.assertIsInstance(Vector2D(x=2.2, y=-3.7), Vector2D)
 
     def test_equality_null(self):
         actual = Vector2D()
