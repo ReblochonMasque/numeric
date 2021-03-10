@@ -150,6 +150,11 @@ class TestVector2D(unittest.TestCase):
         expected = -2
         self.assertEqual(expected, actual)
 
+    def test_unit_vector_0(self):
+        actual = Vector2D(0, -1).unit_vector()
+        expected = Vector2D(0, -1)
+        self.assertEqual(expected, actual)
+
     # def test_cross_unit_1(self):
     #     result = self.unitx.cross(self.unity)
     #     expected = 1
