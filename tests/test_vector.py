@@ -10,6 +10,12 @@ class TestAbstractVector2D(unittest.TestCase):
     def test_instance_1(self):
         self.assertIsInstance(Vector2D(x=2.2, y=-3.7), Vector2D)
 
+    def test_iter_0(self):
+        expecteds = (3.2, 7.3)
+        actuals = Vector2D(3.2, 7.3)
+        for expected, actual in zip(expecteds, actuals):
+            self.assertEqual(expected, actual)
+
     def test_equality_null(self):
         actual = Vector2D()
         expected = Vector2D(0, 0)
