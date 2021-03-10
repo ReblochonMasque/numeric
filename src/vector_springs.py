@@ -165,22 +165,22 @@ class Vector2D(AbstractVector2D):
     def __truediv__(self, divisor: Scalar) -> 'Vector2D':
         """returns a new Vector2D equal to self scaled by divisor
 
-        :param divisor: a float
+        :param divisor: a Scalar
         :return: new Vector2D equal to self divided by divisor
         """
         if divisor == 0:
             raise ValueError
         return Vector2D(self.x / divisor, self.y / divisor)
 
-    def __itruediv__(self, scalar: float) -> 'Vector2D':
-        """returns self divided by scalar
+    def __itruediv__(self, divisor: Scalar) -> 'Vector2D':
+        """returns self divided by divisor
 
-        :param scalar: a float
+        :param divisor: a Scalar
         :return: self
         """
-        if scalar == 0:
+        if divisor == 0:
             raise ValueError
-        self.x, self.y = self.x / scalar, self.y / scalar
+        self.x, self.y = self.x / divisor, self.y / divisor
         return self
 
     def normalize(self) -> 'Vector2D':
