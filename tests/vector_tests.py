@@ -190,11 +190,11 @@ class TestVector2D(unittest.TestCase):
         actual = Vector2D(-1, -1).perp_product(Vector2D(1, -1))
         self.assertEqual(expected, actual)
 
-    # def test_cross_4(self):
-    #     result = self.v_1_m1.cross(self.v_m1_m1)
-    #     expected = -2
-    #     self.assertEqual(result, expected)
-    #
+    def test_perp_product_4(self):
+        expected = -2
+        result = Vector2D(1, -1).perp_product(Vector2D(-1, -1))
+        self.assertEqual(result, expected)
+
     # def test_cross_5(self):
     #     result = self.v_m1_m1.cross(Vector2D(x=2, y=2))
     #     expected = 0
