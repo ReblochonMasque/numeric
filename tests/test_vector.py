@@ -88,6 +88,14 @@ class TestAbstractVector2D(unittest.TestCase):
             print([Vector2D(x=1.75449, y=-7.67882)])
         self.assertEqual(expected, actual.getvalue())
 
+    def test_clone_0(self):
+        """test clone values are same as original"""
+        expected = Vector2D(77.4, -85.9)
+        original = Vector2D(77.4, -85.9)
+        clone = original.clone()
+        self.assertEqual(expected, clone)
+        self.assertEqual(original, clone)
+
 
 class TestVector2D(unittest.TestCase):
 
