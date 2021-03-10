@@ -38,6 +38,10 @@ class AbstractVector2D(ABC):
                math.isclose(self.y, other.y, abs_tol=self.EPSILON)
 
     def __ne__(self, other: AbstractVector2D) -> bool:
+        """tests for inequality between self and other
+
+        :return: bool, False if self and other are equal, True otherwise
+        """
         return not self == other
 
     def __hash__(self) -> int:
