@@ -102,6 +102,15 @@ class TestAbstractVector2D(unittest.TestCase):
         clone = original.clone()
         self.assertNotEqual(id(clone), id(original))
 
+    def test_clone_2(self):
+        """test mutate clone values do no mutate original"""
+        original = Vector2D(77.4, -85.9)
+        orig_x, orig_y = original              # track original values
+        clone = original.clone()
+        clone.x, clone.y = 22, -42             # mutate the clone
+        self.assertEqual(orig_x, original.x)   # assert original not mutated
+        self.assertEqual(orig_y, original.y)
+
 
 class TestVector2D(unittest.TestCase):
 
