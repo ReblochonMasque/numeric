@@ -64,7 +64,7 @@ class AbstractVector2D(ABC):
         return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
 
     def __repr__(self):
-        return str(self)
+        return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
     def clone(self) -> 'AbstractVector2D':
         """clones self and returns it

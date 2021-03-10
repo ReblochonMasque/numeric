@@ -81,6 +81,13 @@ class TestAbstractVector2D(unittest.TestCase):
             print(Vector2D(x=0.00, y=0.00))
         self.assertEqual(expected, actual.getvalue())
 
+    def test_repr_0(self):
+        expected = '[Vector2D(x=1.75449, y=-7.67882)]\n'
+        actual = StringIO()
+        with redirect_stdout(actual):
+            print([Vector2D(x=1.75449, y=-7.67882)])
+        self.assertEqual(expected, actual.getvalue())
+
 
 class TestVector2D(unittest.TestCase):
 
