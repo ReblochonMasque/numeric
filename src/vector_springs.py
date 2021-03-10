@@ -232,13 +232,23 @@ class Vector2D(AbstractVector2D):
         """
         return self.__class__(-self.y, self.x)
 
-    def dot(self, other: 'Vector2D') -> float:
+    def dot(self, other: 'Vector2D') -> Scalar:
         """calculates and returns the dot product of self and other
 
         :param other: Vector2D
-        :return: scalar
+        :return: Scalar
         """
         return sum(c0 * c1 for c0, c1 in zip(self, other))
+
+    def perp_product(self, other) -> Scalar:
+        """2D exterior product, or outer product: ad-bc
+
+        `v.perp(w) = abs(v) * abs(w) * sin(theta)`
+
+        :param other: Vector2D
+        :return: Scalar
+        """
+        return self.x * other.y - self.y * other.x
 
 
 if __name__ == '__main__':
