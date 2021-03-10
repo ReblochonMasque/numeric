@@ -33,7 +33,7 @@ class AbstractVector2D(ABC):
         return math.isclose(self.x, other.x, abs_tol=self.EPSILON) and \
                math.isclose(self.y, other.y, abs_tol=self.EPSILON)
 
-    def __ne__(self, other) -> bool:
+    def __ne__(self, other: AbstractVector2D) -> bool:
         return not self == other
 
     def __str__(self):
