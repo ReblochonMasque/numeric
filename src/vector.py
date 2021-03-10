@@ -36,7 +36,12 @@ class AbstractVector2D(ABC):
     def __ne__(self, other: AbstractVector2D) -> bool:
         return not self == other
 
-    def __hash__(self):
+    def __hash__(self) -> int:
+        """calculates and returns the generic python hash function
+
+        uses the tuple (self.x, self.y)
+        :return: int
+        """
         return hash((self.x, self.y))
 
     def __str__(self):
