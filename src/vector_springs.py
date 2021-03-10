@@ -14,6 +14,12 @@ class AbstractVector2D(ABC):
         yield self.x
         yield self.y
 
+    def __eq__(self, other) -> bool:
+        if not isinstance(other, type(self)):
+            return False
+        return self.x == other.x and self.y == other.y
+
+
     def clone(self):
         """clones self and returns it
 
