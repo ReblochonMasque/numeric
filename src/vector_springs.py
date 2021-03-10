@@ -5,6 +5,7 @@ from typing import Iterator, Union
 
 
 class AbstractVector2D(ABC):
+    EPSILON = 1e-14
 
     def __init__(self, x: float = 0.0, y: float = 0.0) -> None:
         self.x = x
@@ -15,10 +16,11 @@ class AbstractVector2D(ABC):
         yield self.y
 
     def __eq__(self, other) -> bool:
+        assert other is not None
         if not isinstance(other, type(self)):
             return False
-        return self.x == other.x and self.y == other.y
-
+        return math.isclose(self.x, other.x, abs_tol=self.EPSILON) and \
+               math.isclose(self.y, other.y, abs_tol=self.EPSILON)
 
     def clone(self):
         """clones self and returns it
