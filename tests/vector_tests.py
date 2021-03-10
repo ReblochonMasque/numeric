@@ -1,5 +1,5 @@
 import unittest
-from numeric.src import Vector2D
+from numeric.src.vector_springs import Vector2D
 
 
 class TestVector2D(unittest.TestCase):
@@ -65,60 +65,60 @@ class TestVector2D(unittest.TestCase):
         expected = Vector2D(0, 2)
         self.assertEqual(result, expected)
 
-    def test_dot_1(self):
-        result = self.unitx.dot(self.unity)
-        expected = 0
-        self.assertEqual(result, expected)
-
-    def test_dot_2(self):
-        result = self.unity.dot(self.unitx)
-        expected = 0
-        self.assertEqual(result, expected)
-
-    def test_dot_3(self):
-        result = self.unity.dot(self.nullvector)
-        expected = 0
-        self.assertEqual(result, expected)
-
-    def test_dot_4(self):
-        result = self.v_1_1.dot(self.v_1_1)
-        expected = 2
-        self.assertEqual(result, expected)
-
-    def test_dot_5(self):
-        result = self.v_m1_m1.dot(self.v_1_1)
-        expected = -2
-        self.assertEqual(result, expected)
-
-    def test_dot_6(self):
-        result = self.v_1_m1.dot(self.v_m1_1)
-        expected = -2
-        self.assertEqual(result, expected)
-
-    def test_cross_unit_1(self):
-        result = self.unitx.cross(self.unity)
-        expected = 1
-        self.assertEqual(result, expected)
-
-    def test_cross_unit_m1(self):
-        result = self.unity.cross(self.unitx)
-        expected = -1
-        self.assertEqual(result, expected)
-
-    def test_cross_3(self):
-        result = self.v_m1_m1.cross(self.v_1_m1)
-        expected = 2
-        self.assertEqual(result, expected)
-
-    def test_cross_4(self):
-        result = self.v_1_m1.cross(self.v_m1_m1)
-        expected = -2
-        self.assertEqual(result, expected)
-
-    def test_cross_5(self):
-        result = self.v_m1_m1.cross(Vector2D(x=2, y=2))
-        expected = 0
-        self.assertEqual(result, expected)
+    # def test_dot_1(self):
+    #     result = self.unitx.dot(self.unity)
+    #     expected = 0
+    #     self.assertEqual(result, expected)
+    #
+    # def test_dot_2(self):
+    #     result = self.unity.dot(self.unitx)
+    #     expected = 0
+    #     self.assertEqual(result, expected)
+    #
+    # def test_dot_3(self):
+    #     result = self.unity.dot(self.nullvector)
+    #     expected = 0
+    #     self.assertEqual(result, expected)
+    #
+    # def test_dot_4(self):
+    #     result = self.v_1_1.dot(self.v_1_1)
+    #     expected = 2
+    #     self.assertEqual(result, expected)
+    #
+    # def test_dot_5(self):
+    #     result = self.v_m1_m1.dot(self.v_1_1)
+    #     expected = -2
+    #     self.assertEqual(result, expected)
+    #
+    # def test_dot_6(self):
+    #     result = self.v_1_m1.dot(self.v_m1_1)
+    #     expected = -2
+    #     self.assertEqual(result, expected)
+    #
+    # def test_cross_unit_1(self):
+    #     result = self.unitx.cross(self.unity)
+    #     expected = 1
+    #     self.assertEqual(result, expected)
+    #
+    # def test_cross_unit_m1(self):
+    #     result = self.unity.cross(self.unitx)
+    #     expected = -1
+    #     self.assertEqual(result, expected)
+    #
+    # def test_cross_3(self):
+    #     result = self.v_m1_m1.cross(self.v_1_m1)
+    #     expected = 2
+    #     self.assertEqual(result, expected)
+    #
+    # def test_cross_4(self):
+    #     result = self.v_1_m1.cross(self.v_m1_m1)
+    #     expected = -2
+    #     self.assertEqual(result, expected)
+    #
+    # def test_cross_5(self):
+    #     result = self.v_m1_m1.cross(Vector2D(x=2, y=2))
+    #     expected = 0
+    #     self.assertEqual(result, expected)
 
 
 if __name__ == '__main__':
