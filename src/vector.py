@@ -37,7 +37,7 @@ class AbstractVector2D(ABC):
         return math.isclose(self.x, other.x, abs_tol=self.EPSILON) and \
                math.isclose(self.y, other.y, abs_tol=self.EPSILON)
 
-    def __ne__(self, other: AbstractVector2D) -> bool:
+    def __ne__(self, other: 'AbstractVector2D') -> bool:
         """tests for inequality between self and other
 
         :return: bool, False if self and other are equal, True otherwise
@@ -51,6 +51,14 @@ class AbstractVector2D(ABC):
         :return: int
         """
         return hash((self.x, self.y))
+
+    def __bool__(self) -> bool:
+        """tests if the values of self are null/zero
+
+        :return: bool, True if both values are not null/zero, False if they are
+        """
+        return not math.isclose(self.x, 0, abs_tol=self.EPSILON) or \
+               not math.isclose(self.x, 0, abs_tol=self.EPSILON)
 
     def __str__(self):
         return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
