@@ -32,7 +32,7 @@ class TestVector2D(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     def test_inequality(self):
-        self.assertNotEqual(self.unitx, self.unity)
+        self.assertNotEqual(Vector2D(1, 0), Vector2D(0, 1))
 
     def test_add(self):
         result = self.unitx + self.unity
