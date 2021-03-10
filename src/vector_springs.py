@@ -105,7 +105,7 @@ class Vector2D(AbstractVector2D):
         """adds other to self and returns it
 
         :param other: Vector2D
-        :return: self
+        :return: mutated self
         """
         if not isinstance(other, Vector2D):
             raise TypeError
@@ -126,7 +126,7 @@ class Vector2D(AbstractVector2D):
         """subs other from self and returns it
 
         :param other: Vector2D
-        :return: self
+        :return: mutated self
         """
         if not isinstance(other, Vector2D):
             raise TypeError
@@ -160,7 +160,7 @@ class Vector2D(AbstractVector2D):
         """returns self scaled by scalar
 
         :param factor: a float
-        :return: self
+        :return: mutated self
         """
         self.x, self.y = self.x * factor, self.y * factor
         return self
