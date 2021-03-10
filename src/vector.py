@@ -36,6 +36,9 @@ class AbstractVector2D(ABC):
     def __ne__(self, other: AbstractVector2D) -> bool:
         return not self == other
 
+    def __hash__(self):
+        return hash((self.x, self.y))
+
     def __str__(self):
         return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
 
