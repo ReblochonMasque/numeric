@@ -153,13 +153,13 @@ class Vector2D(AbstractVector2D):
         """
         return self * factor
 
-    def __imul__(self, scalar: float) -> 'Vector2D':
+    def __imul__(self, factor: Scalar) -> 'Vector2D':
         """returns self scaled by scalar
 
-        :param scalar: a float
+        :param factor: a float
         :return: self
         """
-        self.x, self.y = self.x * scalar, self.y * scalar
+        self.x, self.y = self.x * factor, self.y * factor
         return self
 
     def __truediv__(self, scalar: float) -> 'Vector2D':
