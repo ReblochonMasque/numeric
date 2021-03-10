@@ -22,6 +22,9 @@ class AbstractVector2D(ABC):
         return math.isclose(self.x, other.x, abs_tol=self.EPSILON) and \
                math.isclose(self.y, other.y, abs_tol=self.EPSILON)
 
+    def __ne__(self, other) -> bool:
+        return not self == other
+
     def clone(self):
         """clones self and returns it
 
