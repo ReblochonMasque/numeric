@@ -27,6 +27,10 @@ class AbstractVector2D(ABC):
         yield self.y
 
     def __eq__(self, other: 'AbstractVector2D') -> bool:
+        """tests for equality between self and other
+
+        :return: bool, True if self and other are equal, False otherwise
+        """
         assert other is not None
         if not isinstance(other, type(self)):
             return False
