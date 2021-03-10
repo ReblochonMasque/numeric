@@ -4,15 +4,6 @@ from numeric.src.vector import Vector2D
 
 class TestVector2D(unittest.TestCase):
 
-    def setUp(self):
-
-        self.unitx = Vector2D(1, 0)
-        self.unity = Vector2D(0, 1)
-        self.v_1_1 = Vector2D(1, 1)
-        self.v_m1_1 = Vector2D(-1, 1)
-        self.v_m1_m1 = Vector2D(-1, -1)
-        self.v_1_m1 = Vector2D(1, -1)
-
     def test_instance(self):
         self.assertIsInstance(Vector2D(), Vector2D)
 
