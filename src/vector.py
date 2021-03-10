@@ -26,7 +26,7 @@ class AbstractVector2D(ABC):
         yield self.x
         yield self.y
 
-    def __eq__(self, other) -> bool:
+    def __eq__(self, other: 'AbstractVector2D') -> bool:
         assert other is not None
         if not isinstance(other, type(self)):
             return False
