@@ -64,15 +64,15 @@ class TestVector2D(unittest.TestCase):
         expected = 0
         self.assertEqual(expected, actual)
 
-    # def test_dot_2(self):
-    #     result = self.unity.dot(self.unitx)
-    #     expected = 0
-    #     self.assertEqual(result, expected)
-    #
-    # def test_dot_3(self):
-    #     result = self.unity.dot(self.nullvector)
-    #     expected = 0
-    #     self.assertEqual(result, expected)
+    def test_dot_2(self):
+        actual = Vector2D(0, 1).dot(Vector2D(1, 0))
+        expected = 0
+        self.assertEqual(expected, actual)
+
+    def test_dot_3(self):
+        actual = Vector2D().dot(Vector2D(1, 0))
+        expected = 0
+        self.assertEqual(expected, actual)
     #
     # def test_dot_4(self):
     #     result = self.v_1_1.dot(self.v_1_1)
