@@ -1,4 +1,8 @@
 import unittest
+
+from contextlib import redirect_stderr, redirect_stdout
+from io import StringIO
+
 from numeric.src.vector import Vector2D
 
 
@@ -69,6 +73,13 @@ class TestAbstractVector2D(unittest.TestCase):
 
     def test_bool_3(self):
         self.assertTrue(Vector2D(0, -2))
+
+    def test_str_0(self):
+        expected = 'Vector2D(x=0.00, y=0.00)\n'
+        actual = StringIO()
+        with redirect_stdout(actual):
+            print(Vector2D(x=0.00, y=0.00))
+        self.assertEqual(expected, actual.getvalue())
 
 
 class TestVector2D(unittest.TestCase):
