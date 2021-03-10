@@ -196,7 +196,7 @@ class Vector2D(AbstractVector2D):
         """
         return math.hypot(self.x, self.y)
 
-    def dot(self, other):
+    def dot(self, other: 'Vector2D') -> float:
         """dot product"""
         return sum(c0 * c1 for c0, c1 in zip(self, other))
 
