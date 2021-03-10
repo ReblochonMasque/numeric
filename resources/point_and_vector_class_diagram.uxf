@@ -35,43 +35,29 @@ y: int, float
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>110</x>
-      <y>410</y>
+      <x>130</x>
+      <y>820</y>
       <w>320</w>
-      <h>340</h>
+      <h>130</h>
     </coordinates>
-    <panel_attributes>Point2D
+    <panel_attributes>AffinePoint2D
 -
 __slots__() -&gt; None
 -
-__add__(Vector2D) -&gt; new Point2D
-__radd__(Vector2D) -&gt; new Point2D
-__iadd__(Vector2D) -&gt; self
--
-__sub__(Vector2D) -&gt; new Point2D
-__sub__(Point2D) -&gt; new Vector2D
-
-__rsub__(Vector2D) -&gt; new Point2D
-__rsub__(Point2D) -&gt; new Vector2D
-
-__isub__(Vector2D) -&gt; new self (Point2D)
--
-is_origin() -&gt; bool
--
-distance_from(Point2D) -&gt; float
+__iadd__(Vector2D, AffinePoint2D) -&gt; self
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>250</x>
+      <x>270</x>
       <y>280</y>
-      <w>150</w>
-      <h>150</h>
+      <w>130</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>130.0;10.0;10.0;130.0</additional_attributes>
+    <additional_attributes>110.0;10.0;10.0;150.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -160,5 +146,46 @@ __trunc__()
 
 </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>130</x>
+      <y>430</y>
+      <w>320</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>Point2D
+-
+__slots__() -&gt; None
+-
+__add__(Vector2D) -&gt; new Point2D
+__radd__(Vector2D) -&gt; new Point2D
+__iadd__(Vector2D) -&gt; self
+-
+__sub__(Vector2D) -&gt; new Point2D
+__sub__(Point2D) -&gt; new Vector2D
+
+__rsub__(Vector2D) -&gt; new Point2D
+__rsub__(Point2D) -&gt; new Vector2D
+
+__isub__(Vector2D) -&gt; new self (Point2D)
+-
+is_origin() -&gt; bool
+-
+distance_from(Point2D) -&gt; float
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>760</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
 </diagram>
