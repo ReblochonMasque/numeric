@@ -34,8 +34,8 @@ class AbstractVector2D(ABC):
         assert other is not None
         if not isinstance(other, type(self)):
             return False
-        return math.isclose(self.x, other.x, abs_tol=self.EPSILON) and \
-               math.isclose(self.y, other.y, abs_tol=self.EPSILON)
+        return (math.isclose(self.x, other.x, abs_tol=self.EPSILON) and
+                math.isclose(self.y, other.y, abs_tol=self.EPSILON))
 
     def __ne__(self, other: 'AbstractVector2D') -> bool:
         """tests for inequality between self and other
@@ -57,7 +57,7 @@ class AbstractVector2D(ABC):
 
         :return: bool, True if both values are not null/zero, False if they are
         """
-        return not (math.isclose(self.x, 0, abs_tol=self.EPSILON) and \
+        return not (math.isclose(self.x, 0, abs_tol=self.EPSILON) and
                     math.isclose(self.y, 0, abs_tol=self.EPSILON))
 
     def __str__(self):
