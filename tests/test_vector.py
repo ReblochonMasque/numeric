@@ -2,7 +2,7 @@ import unittest
 from numeric.src.vector import Vector2D
 
 
-class TestVector2D(unittest.TestCase):
+class TestAbstractVector2D(unittest.TestCase):
 
     def test_instance(self):
         self.assertIsInstance(Vector2D(), Vector2D)
@@ -51,6 +51,9 @@ class TestVector2D(unittest.TestCase):
 
     def test_bool_3(self):
         self.assertTrue(Vector2D(0, -2))
+
+
+class TestVector2D(unittest.TestCase):
 
     def test_add(self):
         actual = Vector2D(1, 0) + Vector2D(0, 1)
