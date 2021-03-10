@@ -32,13 +32,13 @@ class TestVector2D(unittest.TestCase):
     def test_inequality(self):
         self.assertNotEqual(self.unitx, self.unity)
 
-    def test_getitem_1(self):
-        self.assertEqual(self.unitx[0], 1)
-        self.assertEqual(self.unitx[1], 0)
-
-    def test_getitem_2(self):
-        self.assertEqual(self.unity[0], 0)
-        self.assertEqual(self.unity[1], 1)
+    # def test_getitem_1(self):
+    #     self.assertEqual(self.unitx[0], 1)
+    #     self.assertEqual(self.unitx[1], 0)
+    #
+    # def test_getitem_2(self):
+    #     self.assertEqual(self.unity[0], 0)
+    #     self.assertEqual(self.unity[1], 1)
 
     def test_add(self):
         result = self.unitx + self.unity
