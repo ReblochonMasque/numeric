@@ -216,12 +216,13 @@ class Vector2D(AbstractVector2D):
         self.x, self.y = self.x / mag, self.y / mag
         return self
 
-    def magnitude(self) -> float:
+    def __abs__(self) -> Scalar:
         """calculates and returns the magnitude of self
 
-        :return: float equal to the magnitude of self
+        :return: Scalar equal to the magnitude of self
         """
         return math.hypot(self.x, self.y)
+    mag = __abs__
 
     def dot(self, other: 'Vector2D') -> float:
         """calculates and returns the dot product of self and other
