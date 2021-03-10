@@ -145,13 +145,13 @@ class Vector2D(AbstractVector2D):
         """
         return Vector2D(self.x * scalar, self.y * scalar)
 
-    def __rmul__(self, other: float):
+    def __rmul__(self, factor: Scalar) -> 'Vector2D':
         """returns a new Vector2D equal to self scaled by scalar
 
-        :param scalar: a float
+        :param factor: a Scalar
         :return: new Vector2D equal to self scaled by scalar
         """
-        return self * other
+        return self * factor
 
     def __imul__(self, scalar: float) -> 'Vector2D':
         """returns self scaled by scalar
