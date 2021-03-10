@@ -1,5 +1,5 @@
 import unittest
-from numeric.src.vector_springs import Vector2D
+from numeric.src.vector import Vector2D
 
 
 class TestVector2D(unittest.TestCase):
