@@ -59,6 +59,39 @@ class TestVector2D(unittest.TestCase):
         expected = Vector2D(-2, 4)
         self.assertEqual(expected, actual)
 
+    def test_imul_1(self):
+        expected = Vector2D(2, 4)
+        actual = Vector2D(1, 2)
+        expected_id = id(actual)
+        actual *= 2
+        actual_id = id(actual)
+        self.assertEqual(expected, actual)
+        self.assertEqual(expected_id, actual_id)
+
+    def test_imul_2(self):
+        expected = Vector2D(-2, -4)
+        actual = Vector2D(-1, -2)
+        actual *= 2
+        self.assertEqual(expected, actual)
+
+    def test_imul_mutation_1(self):
+        expected = Vector2D(-2, -4)
+        actual = Vector2D(1, 2)
+        expected_id = id(actual)
+        actual *= -2
+        actual_id = id(actual)
+        self.assertEqual(expected, actual)
+        self.assertEqual(expected_id, actual_id)
+
+    def test_imul_mutation_2(self):
+        expected = Vector2D(-2, -4)
+        actual = Vector2D(-1, -2)
+        expected_id = id(actual)
+        actual *= 2
+        actual_id = id(actual)
+        self.assertEqual(expected, actual)
+        self.assertEqual(expected_id, actual_id)
+
     def test_dot_1(self):
         actual = Vector2D(1, 0).dot(Vector2D(0, 1))
         expected = 0
