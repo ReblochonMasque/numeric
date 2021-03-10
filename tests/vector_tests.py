@@ -35,9 +35,9 @@ class TestVector2D(unittest.TestCase):
         self.assertNotEqual(Vector2D(1, 0), Vector2D(0, 1))
 
     def test_add(self):
-        result = self.unitx + self.unity
+        actual = Vector2D(1, 0) + Vector2D(0, 1)
         expected = Vector2D(1, 1)
-        self.assertEqual(result, expected)
+        self.assertEqual(expected, actual)
 
     def test_mul_1(self):
         result = self.unitx * 2
