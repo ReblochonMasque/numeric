@@ -25,6 +25,11 @@ class TestVector2D(unittest.TestCase):
     def test_inequality(self):
         self.assertNotEqual(Vector2D(1, 0), Vector2D(0, 1))
 
+    def test_hash_0(self):
+        expected = hash((22.345, -176.09))
+        actual = hash(Vector2D(22.345, -176.09))
+        self.assertEqual(expected, actual)
+
     def test_add(self):
         actual = Vector2D(1, 0) + Vector2D(0, 1)
         expected = Vector2D(1, 1)
