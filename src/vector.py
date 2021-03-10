@@ -14,6 +14,8 @@ Scalar = Union[int, float]
 
 
 class AbstractVector2D(ABC):
+    """Abstract Base Class for Vector2D and Point2D
+    """
     EPSILON = 1e-14
 
     def __init__(self, x: Scalar = 0.0, y: Scalar = 0.0) -> None:
