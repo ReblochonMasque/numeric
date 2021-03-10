@@ -30,6 +30,11 @@ class TestVector2D(unittest.TestCase):
         actual = hash(Vector2D(22.345, -176.09))
         self.assertEqual(expected, actual)
 
+    def test_hash_1(self):
+        expected = hash((0, 1))
+        actual = hash(Vector2D(0, 1))
+        self.assertEqual(expected, actual)
+
     def test_add(self):
         actual = Vector2D(1, 0) + Vector2D(0, 1)
         expected = Vector2D(1, 1)
