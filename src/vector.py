@@ -66,10 +66,10 @@ class AbstractVector2D(ABC):
     def __repr__(self):
         return str(self)
 
-    def clone(self):
+    def clone(self) -> 'AbstractVector2D':
         """clones self and returns it
 
-        :return: clone of self
+        :return: AbstractVector2D, clone of self
         """
         return self.__class__(self.x, self.y)
 
