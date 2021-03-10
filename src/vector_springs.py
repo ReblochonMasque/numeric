@@ -179,11 +179,32 @@ class Vector2D(AbstractVector2D):
         """returns self divided by divisor
 
         :param divisor: a Scalar
-        :return: self
+        :return: mutated self
         """
         if divisor == 0:
             raise ValueError
         self.x, self.y = self.x / divisor, self.y / divisor
+        return self
+
+    def __floordiv__(self, divisor: Scalar) -> 'Vector2D':
+        """returns a new Vector2D equal to self floor scaled by divisor
+
+        :param divisor: a Scalar
+        :return: new Vector2D equal to self floor divided by divisor
+        """
+        if divisor == 0:
+            raise ValueError
+        return Vector2D(self.x // divisor, self.y // divisor)
+
+    def __ifloordiv__(self, divisor: Scalar) -> 'Vector2D':
+        """returns self floor divided by divisor
+
+        :param divisor: a Scalar
+        :return: mutated self
+        """
+        if divisor == 0:
+            raise ValueError
+        self.x, self.y = self.x // divisor, self.y // divisor
         return self
 
     def normalize(self) -> 'Vector2D':
