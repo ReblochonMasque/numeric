@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>90</y>
+      <w>480</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>CoordinateSystem
+-
+Axes:
+origin: Point2D
+origin_e0: Vector2D
+origin_e1: Vector2D
+
+e0 = Vector2D(1, 0) - invariant
+e1 = Vector2D(0, 1) - invariant
+
+-
+
+Axes</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>600</x>
+      <y>90</y>
+      <w>440</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>CoordinateSystem
+-
+origin: defined in the parent CoordinateSystem
+    origin = 0, 0 in self
+        
+axes e0, e1, defined in the parent CoordinateSystem
+    e0 = (1, 0) in self
+    e1 = (0, 1) in self</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>600</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>CoordinateSystem
+-
+WORLD</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>230</x>
+      <y>700</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>CoordinateSystem
+-
+HOUSE</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>700</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>CoordinateSystem
+-
+SCREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>230</x>
+      <y>820</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>CoordinateSystem
+-
+TABLE</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>230</x>
+      <y>940</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>CoordinateSystem
+-
+GLASS</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>300</x>
+      <y>860</y>
+      <w>30</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>300</x>
+      <y>740</y>
+      <w>30</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>300</x>
+      <y>640</y>
+      <w>140</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>640</y>
+      <w>150</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;60.0</additional_attributes>
+  </element>
+</diagram>
