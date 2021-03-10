@@ -59,11 +59,11 @@ class TestVector2D(unittest.TestCase):
         expected = Vector2D(-2, 4)
         self.assertEqual(expected, actual)
 
-    # def test_dot_1(self):
-    #     result = self.unitx.dot(self.unity)
-    #     expected = 0
-    #     self.assertEqual(result, expected)
-    #
+    def test_dot_1(self):
+        actual = Vector2D(1, 0).dot(Vector2D(0, 1))
+        expected = 0
+        self.assertEqual(expected, actual)
+
     # def test_dot_2(self):
     #     result = self.unity.dot(self.unitx)
     #     expected = 0
