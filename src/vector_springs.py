@@ -207,14 +207,13 @@ class Vector2D(AbstractVector2D):
         self.x, self.y = self.x // divisor, self.y // divisor
         return self
 
-    def normalize(self) -> 'Vector2D':
-        """normalizes self, and returns it
+    def unit_vector(self) -> 'Vector2D':
+        """calculates and returns the unique unit vector in the direction of self
 
-        :return: self
+        :return: new Vector2D
         """
-        mag = self.magnitude()
-        self.x, self.y = self.x / mag, self.y / mag
-        return self
+        mag = abs(self)
+        return self.__class__(self.x / mag, self.y / mag)
 
     def __abs__(self) -> Scalar:
         """calculates and returns the magnitude of self
@@ -235,15 +234,15 @@ class Vector2D(AbstractVector2D):
 
 if __name__ == '__main__':
 
-    a = Vector2D(2.12345, 3.9991)
-    print(a)
-
-    p0, p1 = Point2D(2, 4), Point2D(4, 2)
-    print(p0-p1, p1-p0, p0+a, a+p0)
-    a += p0-p1
-    print(a)
-    print(Point2D() + a)
+    # a = Vector2D(2.12345, 3.9991)
+    # print(a)
+    #
+    # p0, p1 = Point2D(2, 4), Point2D(4, 2)
+    # print(p0-p1, p1-p0, p0+a, a+p0)
+    # a += p0-p1
+    # print(a)
+    # print(Point2D() + a)
 
     w = Vector2D(3, 4)
-    print(w, w.magnitude())
-    print(w.normalize())
+    print(w, w.mag())
+    print(a := w.unit_vector(), a.mag())
