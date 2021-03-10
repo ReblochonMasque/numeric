@@ -38,6 +38,9 @@ class AbstractVector2D(ABC):
     def __str__(self):
         return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
 
+    def __repr__(self):
+        return str(self)
+
 
 class Point2D(AbstractVector2D):
 
