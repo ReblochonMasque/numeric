@@ -6,7 +6,6 @@ class TestVector2D(unittest.TestCase):
 
     def setUp(self):
 
-        self.nullvector = Vector2D()
         self.unitx = Vector2D(1, 0)
         self.unity = Vector2D(0, 1)
         self.v_1_1 = Vector2D(1, 1)
@@ -18,8 +17,9 @@ class TestVector2D(unittest.TestCase):
         self.assertIsInstance(Vector2D(), Vector2D)
 
     def test_equality_null(self):
-        other = Vector2D(0, 0)
-        self.assertEqual(other, self.nullvector)
+        actual = Vector2D()
+        expected = Vector2D(0, 0)
+        self.assertEqual(expected, actual)
 
     def test_equality_unitx(self):
         other = Vector2D(1, 0)
