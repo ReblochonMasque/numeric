@@ -50,9 +50,9 @@ class TestVector2D(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     def test_rmul_1(self):
-        result = 2 * self.unitx
-        expected = Vector2D(2, 0)
-        self.assertEqual(result, expected)
+        actual = 2 * Vector2D(1, 2)
+        expected = Vector2D(2, 4)
+        self.assertEqual(expected, actual)
 
     def test_rmul_2(self):
         result = 2 * self.unity
