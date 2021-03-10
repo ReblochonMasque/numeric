@@ -207,7 +207,7 @@ class Vector2D(AbstractVector2D):
         self.x, self.y = self.x // divisor, self.y // divisor
         return self
 
-    def unit_vector(self) -> 'Vector2D':
+    def unit(self) -> 'Vector2D':
         """calculates and returns the unique unit vector in the direction of self
 
         :return: new Vector2D
@@ -264,4 +264,4 @@ if __name__ == '__main__':
 
     w = Vector2D(3, 4)
     print(w, w.mag())
-    print(a := w.unit_vector(), a.mag())
+    print(a := w.unit(), a.mag())
