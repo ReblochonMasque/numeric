@@ -27,8 +27,9 @@ class TestVector2D(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     def test_equality_unity(self):
-        other = Vector2D(0, 1)
-        self.assertEqual(other, self.unity)
+        actual = Vector2D(0, 1)
+        expected = Vector2D(0, 1)
+        self.assertEqual(expected, actual)
 
     def test_inequality(self):
         self.assertNotEqual(self.unitx, self.unity)
