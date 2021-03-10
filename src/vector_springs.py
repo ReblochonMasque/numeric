@@ -223,6 +223,15 @@ class Vector2D(AbstractVector2D):
         return math.hypot(self.x, self.y)
     mag = __abs__
 
+    def perp(self) -> 'Vector2D':
+        """2D Perp Operator
+
+        calculates and returns a counterclockwise (ccw) normal vector to self
+
+        :return: a new Vector2D normal to self, pointing to the left (ccw)
+        """
+        return self.__class__(-self.y, self.x)
+
     def dot(self, other: 'Vector2D') -> float:
         """calculates and returns the dot product of self and other
 
