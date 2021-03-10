@@ -96,6 +96,12 @@ class TestAbstractVector2D(unittest.TestCase):
         self.assertEqual(expected, clone)
         self.assertEqual(original, clone)
 
+    def test_clone_1(self):
+        """test clone id not same as original id"""
+        original = Vector2D(77.4, -85.9)
+        clone = original.clone()
+        self.assertNotEqual(id(clone), id(original))
+
 
 class TestVector2D(unittest.TestCase):
 
