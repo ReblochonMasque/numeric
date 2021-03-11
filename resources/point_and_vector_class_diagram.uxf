@@ -101,7 +101,7 @@ __itruediv__(float) -&gt; self (Vector2D)
 __floordiv__(float) -&gt; new Vector2D
 __ifloordiv__(float) -&gt; self (Vector2D)
 -
-normal() -&gt; new Vector2D (Vector2D)
+unit() -&gt; new Vector2D (Vector2D) . [normalize]
 perp() -&gt; self (Vector2D)
 dot(Vector2D) -&gt; float
 # det(Vector2D) -&gt; float  [ad-bc determinant?]
