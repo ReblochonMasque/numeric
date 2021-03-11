@@ -55,7 +55,7 @@ class AbstractVector2D(ABC):
     def __bool__(self) -> bool:
         """tests if the values of self are null/zero
 
-        :return: bool, True if both values are not null/zero, False if they are
+        :return: bool, False when both values are zero, True otherwise
         """
         return not (math.isclose(self.x, 0, abs_tol=self.EPSILON) and
                     math.isclose(self.y, 0, abs_tol=self.EPSILON))
@@ -281,6 +281,9 @@ class Vector2D(AbstractVector2D):
         :return: Scalar
         """
         return self.x * other.y - self.y * other.x
+
+    def isnull(self)-> bool:
+        return not bool(self)
 
 
 if __name__ == '__main__':

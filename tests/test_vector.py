@@ -289,6 +289,21 @@ class TestVector2D(unittest.TestCase):
         actual = Vector2D(-1, -1).perp_product(Vector2D(x=2, y=2))
         self.assertEqual(expected, actual)
 
+    def test_isnull_0(self):
+        self.assertTrue(Vector2D().isnull())
+
+    def test_isnull_1(self):
+        self.assertFalse(Vector2D(0, 1).isnull())
+
+    def test_isnull_2(self):
+        self.assertFalse(Vector2D(1, 0).isnull())
+
+    def test_isnull_3(self):
+        self.assertFalse(Vector2D(-1, -1).isnull())
+
+    def test_isnull_4(self):
+        self.assertFalse(Vector2D(1, 1).isnull())
+
 
 if __name__ == '__main__':
     unittest.main()
