@@ -120,6 +120,18 @@ class Point2D(AbstractVector2D):
         self.x, self.y = self.x - other.x, self.y - other.y
         return self
 
+    # POINT
+    #
+    # def distance_from_point(self, other: 'Point') -> Number:
+    #     """if both points are not the same dimension, the extra dimensions
+    #     are dropped - i/e an orthogonal projection of the largest dimensional
+    #     object is used
+    #     """
+    #     return math.sqrt(sum((selfv - otherv) ** 2 for selfv, otherv in zip(self, other)))
+    #
+    # def mid_point(self, other: 'Point') -> 'Point':
+    #     return self.__class__(*((selfv + otherv) / 2 for selfv, otherv in zip(self, other)))
+
 
 class Vector2D(AbstractVector2D):
 
