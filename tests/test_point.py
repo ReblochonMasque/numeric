@@ -59,6 +59,11 @@ class TestPoint(unittest.TestCase):
         actual = hash(Point(22.345, -176.09, 142.3, 17.01))
         self.assertEqual(expected, actual)
 
+    def test_hash_1(self):
+        expected = hash((0, 1, 0, 0))
+        actual = hash(Point(0, 1, 0, 0))
+        self.assertEqual(expected, actual)
+
 
 class TestPoint2D(unittest.TestCase):
 
