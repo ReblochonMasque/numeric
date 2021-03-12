@@ -133,7 +133,11 @@ class Point2D(AbstractPointVector):
     #     return self.__class__(*((selfv + otherv) / 2 for selfv, otherv in zip(self, other)))
 
 
-class Vector2D(AbstractPointVector):
+class Vector(AbstractPointVector):
+    pass
+
+
+class Vector2D(Vector):
 
     def __add__(self, other: Union['Point2D', 'Vector2D']) -> Union['Point2D', 'Vector2D']:
         """returns a new Vector2D sum of self and other
