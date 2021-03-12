@@ -41,6 +41,9 @@ class TestAbstractVector2DWithPoint2D(unittest.TestCase):
     def test_inequality_0(self):
         self.assertNotEqual(Point2D(1, 0), Point2D(0, 1))
 
+    def test_inequality_1(self):
+        self.assertNotEqual(Point2D(-1, -7.35), Point2D(-1, 7.35))
+
 
 if __name__ == '__main__':
     unittest.main()
