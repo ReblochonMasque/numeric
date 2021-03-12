@@ -36,6 +36,7 @@ class TestVector(unittest.TestCase):
             print([v])
         self.assertEqual(expected, actual.getvalue())
 
+
 class TestVector2D(unittest.TestCase):
 
     def test_instance_0(self):
