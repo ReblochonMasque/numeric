@@ -69,6 +69,18 @@ class TestPoint(unittest.TestCase):
         actual = hash(Point(0, 1, 0, 1))
         self.assertNotEqual(notexpected, actual)
 
+    def test_bool_0(self):
+        self.assertTrue(Point(1, 12, 0, 1, 3))
+
+    def test_bool_1(self):
+        self.assertFalse(Point(0, 0, 0, 0, 0, 0, 0))
+
+    def test_bool_2(self):
+        self.assertTrue(Point(1, 0, 0, 1))
+
+    def test_bool_3(self):
+        self.assertTrue(Point(0, -2, -2, -2))
+
 
 class TestPoint2D(unittest.TestCase):
 
