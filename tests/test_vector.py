@@ -159,7 +159,6 @@ class TestVector(unittest.TestCase):
     def test_add_instance(self):
         val0, val1 = (1, 0, 0, 0, 1), (0, 1, 1, 1, 0)
         actual = Vector(*val0) + Vector(*val1)
-        print(actual)
         self.assertIsInstance(actual, Vector)
 
 
