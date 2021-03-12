@@ -22,7 +22,7 @@ class TestVector(unittest.TestCase):
 
     def test_str_0(self):
         expected = 'Vector(1.00, 2.01, 3.79, 4.10)\n'
-        v = Vector((1.0001, 2.009, 3.78987, 4.1))
+        v = Vector(1.0001, 2.009, 3.78987, 4.1)
         actual = StringIO()
         with redirect_stdout(actual):
             print(v)
@@ -30,11 +30,24 @@ class TestVector(unittest.TestCase):
 
     def test_repr_0(self):
         expected = '[Vector(1.0001, 2.009, 3.78987, 4.1)]\n'
-        v = Vector((1.0001, 2.009, 3.78987, 4.1))
+        v = Vector(1.0001, 2.009, 3.78987, 4.1)
         actual = StringIO()
         with redirect_stdout(actual):
             print([v])
         self.assertEqual(expected, actual.getvalue())
+
+    def test_add(self):
+        val0, val1 = (1, 0, 0, 0, 1), (0, 1, 1, 1, 0)
+        actual = Vector(*val0) + Vector(*val1)
+        expected_vals = (1, 1, 1, 1, 1)
+        expected = Vector(*expected_vals)
+        self.assertEqual(expected, actual)
+
+    def test_add_instance(self):
+        val0, val1 = (1, 0, 0, 0, 1), (0, 1, 1, 1, 0)
+        actual = Vector(*val0) + Vector(*val1)
+        print(actual)
+        self.assertIsInstance(actual, Vector)
 
 
 class TestVector2D(unittest.TestCase):
