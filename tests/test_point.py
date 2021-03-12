@@ -323,7 +323,7 @@ class TestPointVectorInteraction(unittest.TestCase):
         self.assertEqual(expected, str(e.exception))
 
 
-class TestPointVectorInteraction(unittest.TestCase):
+class TestPoint2DVector2DInteraction(unittest.TestCase):
 
     def test_add_Point2D_w_Vector2D(self):
         expected = Point2D(-2, 1)
