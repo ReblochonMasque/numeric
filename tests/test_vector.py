@@ -27,6 +27,11 @@ class TestVector(unittest.TestCase):
         for expected, actual in zip(expecteds, actuals):
             self.assertEqual(expected, actual)
 
+    def test_iter_1(self):
+        expecteds = (3.2, 7.3, 8.987, -79.1)
+        a, b, c, d = Vector(3.2, 7.3, 8.987, -79.1)
+        self.assertEqual(expecteds, (a, b, c, d))
+
     def test_str_0(self):
         expected = 'Vector(1.00, 2.01, 3.79, 4.10)\n'
         v = Vector(1.0001, 2.009, 3.78987, 4.1)
