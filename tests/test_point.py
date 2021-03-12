@@ -24,10 +24,10 @@ class TestPoint(unittest.TestCase):
         a, b, c, d = Point(3.2, 7.3, 8.987, -79.1)
         self.assertEqual(expecteds, (a, b, c, d))
 
-    # def test_equality_origin(self):
-    #     actual = Point(0, 0, 0, 0, 0, 0, 0)
-    #     expected = Point(0, 0, 0, 0, 0, 0, 0)
-    #     self.assertEqual(expected, actual)
+    def test_equality_origin(self):
+        actual = Point(0, 0, 0, 0, 0, 0, 0)
+        expected = Point(0, 0, 0, 0, 0, 0, 0)
+        self.assertEqual(expected, actual)
 
 
 class TestPoint2D(unittest.TestCase):
