@@ -6,6 +6,11 @@ from io import StringIO
 from numeric.src.vector import Point2D
 
 
+class TestPoint(unittest.TestCase):
+    """Tests Suite for instances of Point (dim >3 )
+    """
+
+
 class TestPoint2D(unittest.TestCase):
 
     def test_instance_0(self):
