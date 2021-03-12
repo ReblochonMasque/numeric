@@ -54,6 +54,11 @@ class TestAbstractVector2DWithPoint2D(unittest.TestCase):
         actual = hash(Point2D(0, 1))
         self.assertEqual(expected, actual)
 
+    def test_hash_2(self):
+        notexpected = hash((1, 0))
+        actual = hash(Point2D(0, 1))
+        self.assertNotEqual(notexpected, actual)
+
 
 if __name__ == '__main__':
     unittest.main()
