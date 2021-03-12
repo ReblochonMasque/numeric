@@ -1,5 +1,5 @@
 """
-classes to represent Point2D and Vector2D
+classes to represent Point and Vector
 
 """
 
