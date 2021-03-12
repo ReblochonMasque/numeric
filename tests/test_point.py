@@ -48,6 +48,9 @@ class TestPoint(unittest.TestCase):
         expected = Point(0, 1, 0, 3)
         self.assertEqual(expected, actual)
 
+    def test_inequality_0(self):
+        self.assertNotEqual(Point(1, 0, 1, -1, 9, 2), Point(0, 1, 1, -1, 9))
+
 
 class TestPoint2D(unittest.TestCase):
 
