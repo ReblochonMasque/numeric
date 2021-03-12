@@ -54,6 +54,11 @@ class TestPoint(unittest.TestCase):
     def test_inequality_1(self):
         self.assertNotEqual(Point(-1, 0, 0, -7.35), Point(-1, 0, 0, 7.35))
 
+    def test_hash_0(self):
+        expected = hash((22.345, -176.09, 142.3, 17.01))
+        actual = hash(Point(22.345, -176.09, 142.3, 17.01))
+        self.assertEqual(expected, actual)
+
 
 class TestPoint2D(unittest.TestCase):
 
