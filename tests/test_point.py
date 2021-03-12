@@ -1,5 +1,8 @@
 import unittest
 
+from contextlib import redirect_stderr, redirect_stdout
+from io import StringIO
+
 from numeric.src.vector import Point2D
 
 
@@ -70,6 +73,13 @@ class TestAbstractVector2DWithPoint2D(unittest.TestCase):
 
     def test_bool_3(self):
         self.assertTrue(Point2D(0, -2))
+
+    def test_str_0(self):
+        expected = 'Point2D(x=0.00, y=0.00)\n'
+        actual = StringIO()
+        with redirect_stdout(actual):
+            print(Point2D(x=0.00, y=0.00))
+        self.assertEqual(expected, actual.getvalue())
 
 
 if __name__ == '__main__':
