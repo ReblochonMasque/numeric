@@ -44,6 +44,11 @@ class TestAbstractVector2DWithPoint2D(unittest.TestCase):
     def test_inequality_1(self):
         self.assertNotEqual(Point2D(-1, -7.35), Point2D(-1, 7.35))
 
+    def test_hash_0(self):
+        expected = hash((22.345, -176.09))
+        actual = hash(Point2D(22.345, -176.09))
+        self.assertEqual(expected, actual)
+
 
 if __name__ == '__main__':
     unittest.main()
