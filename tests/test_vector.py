@@ -111,6 +111,12 @@ class TestVector(unittest.TestCase):
         self.assertEqual(expected, clone)
         self.assertEqual(original, clone)
 
+    def test_clone_1(self):
+        """test clone id not same as original id"""
+        original = Vector(77.4, -85.9, 817.2, 99.99)
+        clone = original.clone()
+        self.assertNotEqual(id(clone), id(original))
+
     def test_add(self):
         val0, val1 = (1, 0, 0, 0, 1), (0, 1, 1, 1, 0)
         actual = Vector(*val0) + Vector(*val1)
