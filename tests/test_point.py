@@ -96,6 +96,12 @@ class TestAbstractVector2DWithPoint2D(unittest.TestCase):
         self.assertEqual(expected, clone)
         self.assertEqual(original, clone)
 
+    def test_clone_1(self):
+        """test clone id not same as original id"""
+        original = Point2D(77.4, -85.9)
+        clone = original.clone()
+        self.assertNotEqual(id(clone), id(original))
+
 
 if __name__ == '__main__':
     unittest.main()
