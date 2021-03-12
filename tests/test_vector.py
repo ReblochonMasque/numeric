@@ -6,7 +6,7 @@ Tests Suite for Vector
 
 import unittest
 
-from contextlib import redirect_stderr, redirect_stdout
+from contextlib import redirect_stdout
 from io import StringIO
 
 from numeric.src.vector import Vector, Vector2D
