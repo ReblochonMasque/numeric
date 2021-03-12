@@ -21,7 +21,6 @@ class TestVector(unittest.TestCase):
         self.assertIsInstance(Vector(values), Vector)
 
 
-
 class TestVector2D(unittest.TestCase):
 
     def test_instance_0(self):
