@@ -287,6 +287,14 @@ class TestPointVectorInteraction(unittest.TestCase):
             _ = p0 + p1
         self.assertEqual(expected, str(e.exception))
 
+    def test_add_Point_w_tuple(self):
+        p0 = Point(1, 2, 3, 4)
+        p1 = (4, 3, 2, 1)
+        expected = f'addition of Point with {type(p1)} is not implemented'
+        with self.assertRaises(NotImplementedError) as e:
+            _ = p0 + p1
+        self.assertEqual(expected, str(e.exception))
+
 
 if __name__ == '__main__':
     unittest.main()

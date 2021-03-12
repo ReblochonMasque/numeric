@@ -283,7 +283,7 @@ class Point(AbstractPointVector):
         if isinstance(other, Point):
             raise TypeError("cannot add two Point")
         elif not isinstance(other, Vector):
-            raise TypeError("unknown type to add to a Point")
+            raise NotImplementedError(f'addition of Point with {type(other)} is not implemented')
         if len(self._coords) != len(other._coords):
             raise ValueError("Incompatible operands sizes")
         return self.__class__(*(self_c + other_c for self_c, other_c in zip(self, other)))
