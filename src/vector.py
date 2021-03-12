@@ -60,10 +60,10 @@ class AbstractPointVector(ABC):
         """
         return not all(math.isclose(coord, 0, abs_tol=self.EPSILON) for coord in self._coords)
 
-    # @todo generalize to ndim
-    # def __str__(self):
-    #     return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
-    #
+    def __str__(self):
+        vals = [f'{v: .2f}' for v in self._coords]
+        return f'{self.__class__.__name__}({", ".join(vals)})'
+
     # def __repr__(self):
     #     return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
@@ -348,3 +348,6 @@ if __name__ == '__main__':
     w = Vector2D(3, 4)
     print(w, w.mag())
     print(a := w.unit(), a.mag())
+
+    v = Vector((1.0001, 2.009, 3.78987, 4.1))
+    print(v)
