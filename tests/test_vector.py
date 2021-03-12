@@ -47,6 +47,9 @@ class TestVector(unittest.TestCase):
         expected = Vector(0, 1, 0, 3)
         self.assertEqual(expected, actual)
 
+    def test_inequality_0(self):
+        self.assertNotEqual(Vector(1, 0, 1, -1, 9, 2), Vector(0, 1, 1, -1, 9))
+
     def test_str_0(self):
         expected = 'Vector(1.00, 2.01, 3.79, 4.10)\n'
         v = Vector(1.0001, 2.009, 3.78987, 4.1)
