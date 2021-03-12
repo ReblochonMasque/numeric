@@ -21,10 +21,11 @@ class AbstractPointVector(ABC):
     def __init__(self, x: Scalar = 0.0, y: Scalar = 0.0) -> None:
         self.x = x
         self.y = y
+        self._coords = [self.x, self.y]
 
     def __iter__(self) -> Iterator:
-        yield self.x
-        yield self.y
+        for coord in self._coords:
+            yield coord
 
     def __eq__(self, other: 'AbstractPointVector') -> bool:
         """tests for equality between self and other
