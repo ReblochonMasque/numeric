@@ -63,6 +63,18 @@ class TestVector(unittest.TestCase):
         actual = hash(Vector(0, 1, 0, 0))
         self.assertEqual(expected, actual)
 
+    def test_bool_0(self):
+        self.assertTrue(Vector(1, 12, 0, 1, 3))
+
+    def test_bool_1(self):
+        self.assertFalse(Vector(0, 0, 0, 0, 0, 0, 0))
+
+    def test_bool_2(self):
+        self.assertTrue(Vector(1, 0, 0, 1))
+
+    def test_bool_3(self):
+        self.assertTrue(Vector(0, -2, -2, -2))
+
     def test_hash_2(self):
         notexpected = hash((1, 0, 1, 0))
         actual = hash(Vector(0, 1, 0, 1))
