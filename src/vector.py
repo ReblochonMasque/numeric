@@ -13,7 +13,7 @@ from typing import Iterator, Union
 Scalar = Union[int, float]
 
 
-class AbstractVector2D(ABC):
+class AbstractPointVector(ABC):
     """Abstract Base Class for Vector2D and Point2D
     """
     EPSILON = 1e-14
@@ -26,7 +26,7 @@ class AbstractVector2D(ABC):
         yield self.x
         yield self.y
 
-    def __eq__(self, other: 'AbstractVector2D') -> bool:
+    def __eq__(self, other: 'AbstractPointVector') -> bool:
         """tests for equality between self and other
 
         :return: bool, True if self and other are equal, False otherwise
@@ -37,7 +37,7 @@ class AbstractVector2D(ABC):
         return (math.isclose(self.x, other.x, abs_tol=self.EPSILON) and
                 math.isclose(self.y, other.y, abs_tol=self.EPSILON))
 
-    def __ne__(self, other: 'AbstractVector2D') -> bool:
+    def __ne__(self, other: 'AbstractPointVector') -> bool:
         """tests for inequality between self and other
 
         :return: bool, False if self and other are equal, True otherwise
@@ -66,15 +66,15 @@ class AbstractVector2D(ABC):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    def clone(self) -> 'AbstractVector2D':
+    def clone(self) -> 'AbstractPointVector':
         """clones self and returns it
 
-        :return: AbstractVector2D, clone of self
+        :return: AbstractPointVector, clone of self
         """
         return self.__class__(self.x, self.y)
 
 
-class Point2D(AbstractVector2D):
+class Point2D(AbstractPointVector):
 
     def __add__(self, other: 'Vector2D') -> 'Point2D':
         """returns a new Vector2D sum of self and other
@@ -133,7 +133,7 @@ class Point2D(AbstractVector2D):
     #     return self.__class__(*((selfv + otherv) / 2 for selfv, otherv in zip(self, other)))
 
 
-class Vector2D(AbstractVector2D):
+class Vector2D(AbstractPointVector):
 
     def __add__(self, other: Union['Point2D', 'Vector2D']) -> Union['Point2D', 'Vector2D']:
         """returns a new Vector2D sum of self and other
