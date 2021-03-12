@@ -18,7 +18,7 @@ class AbstractPointVector(ABC):
     """
     EPSILON = 1e-14
 
-    def __init__(self, coords: Iterable[Scalar]) -> None:
+    def __init__(self, *coords: Scalar) -> None:
         self._coords = list(coords)
 
     def __iter__(self) -> Iterator:
@@ -65,7 +65,7 @@ class AbstractPointVector(ABC):
         return f'{self.__class__.__name__}({", ".join(vals)})'
 
     def __repr__(self):
-        vals = [f'{v}' for v in self._coords]
+        vals = [str(v) for v in self._coords]
         return f'{self.__class__.__name__}({", ".join(vals)})'
 
     def clone(self) -> 'AbstractPointVector':
@@ -81,7 +81,7 @@ class AbstractPointVector(ABC):
         :param other: Vector2D
         :return: new Vector2D sum of self and other
         """
-        return self.__class__((self_c + other_c for self_c, other_c in zip(self, other)))
+        return self.__class__(*(self_c + other_c for self_c, other_c in zip(self, other)))
 
 
 class Vector(AbstractPointVector):
@@ -107,7 +107,7 @@ class Vector2D(Vector):
     def __init__(self, x: Scalar = 0.0, y: Scalar = 0.0) -> None:
         self.x = x
         self.y = y
-        super().__init__((self.x, self.y))
+        super().__init__(self.x, self.y)
 
     def __str__(self):
         return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
@@ -292,7 +292,7 @@ class Point2D(AbstractPointVector):
     def __init__(self, x: Scalar = 0.0, y: Scalar = 0.0) -> None:
         self.x = x
         self.y = y
-        super().__init__((self.x, self.y))
+        super().__init__(self.x, self.y)
 
     def __str__(self):
         return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
