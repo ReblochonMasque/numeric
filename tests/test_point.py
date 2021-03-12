@@ -51,6 +51,9 @@ class TestPoint(unittest.TestCase):
     def test_inequality_0(self):
         self.assertNotEqual(Point(1, 0, 1, -1, 9, 2), Point(0, 1, 1, -1, 9))
 
+    def test_inequality_1(self):
+        self.assertNotEqual(Point(-1, 0, 0, -7.35), Point(-1, 0, 0, 7.35))
+
 
 class TestPoint2D(unittest.TestCase):
 
