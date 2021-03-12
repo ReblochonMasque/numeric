@@ -103,6 +103,14 @@ class TestVector(unittest.TestCase):
             print([v])
         self.assertEqual(expected, actual.getvalue())
 
+    def test_clone_0(self):
+        """test clone values are same as original"""
+        expected = Vector(77.4, -85.9, 817.2, 99.99)
+        original = Vector(77.4, -85.9, 817.2, 99.99)
+        clone = original.clone()
+        self.assertEqual(expected, clone)
+        self.assertEqual(original, clone)
+
     def test_add(self):
         val0, val1 = (1, 0, 0, 0, 1), (0, 1, 1, 1, 0)
         actual = Vector(*val0) + Vector(*val1)
