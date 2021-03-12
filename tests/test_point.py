@@ -65,6 +65,9 @@ class TestAbstractVector2DWithPoint2D(unittest.TestCase):
     def test_bool_1(self):
         self.assertFalse(Point2D(0, 0))
 
+    def test_bool_2(self):
+        self.assertTrue(Point2D(1, 0))
+
 
 if __name__ == '__main__':
     unittest.main()
