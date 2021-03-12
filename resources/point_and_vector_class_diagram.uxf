@@ -9,7 +9,7 @@
       <w>370</w>
       <h>270</h>
     </coordinates>
-    <panel_attributes>/AbstractVector2D(ABC)/
+    <panel_attributes>/AbstractPointVector(ABC)/
 --
 __init__(x=0, y=0) -&gt; None
 __iter__() -&gt; Iterator
