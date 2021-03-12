@@ -88,6 +88,13 @@ class TestVector(unittest.TestCase):
             print(v)
         self.assertEqual(expected, actual.getvalue())
 
+    def test_str_1(self):
+        expected = 'Vector(0.00, 0.00, 0.00, 0.00, 55.01)\n'
+        actual = StringIO()
+        with redirect_stdout(actual):
+            print(Vector(0, 0, 0, 0, 55.00999))
+        self.assertEqual(expected, actual.getvalue())
+
     def test_repr_0(self):
         expected = '[Vector(1.0001, 2.009, 3.78987, 4.1)]\n'
         v = Vector(1.0001, 2.009, 3.78987, 4.1)
