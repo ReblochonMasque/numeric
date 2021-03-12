@@ -13,6 +13,12 @@ class TestPoint(unittest.TestCase):
     def test_instance_0(self):
         self.assertIsInstance(Point(1, 2, 3, 4), Point)
 
+    def test_iter_0(self):
+        expecteds = (3.2, 7.3, 8.987, -79.1)
+        actuals = Point(3.2, 7.3, 8.987, -79.1)
+        for expected, actual in zip(expecteds, actuals):
+            self.assertEqual(expected, actual)
+
 
 class TestPoint2D(unittest.TestCase):
 
