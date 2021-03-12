@@ -60,8 +60,7 @@ class AbstractPointVector(ABC):
 
         :return: bool, False when both values are zero, True otherwise
         """
-        return not (math.isclose(self.x, 0, abs_tol=self.EPSILON) and
-                    math.isclose(self.y, 0, abs_tol=self.EPSILON))
+        return not all(math.isclose(coord, 0, abs_tol=self.EPSILON) for coord in self._coords)
 
     def __str__(self):
         return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
