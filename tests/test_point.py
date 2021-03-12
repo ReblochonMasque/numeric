@@ -23,6 +23,11 @@ class TestAbstractVector2DWithPoint2D(unittest.TestCase):
         self.assertEqual(expected_x, actual_x)
         self.assertEqual(expected_y, actual_y)
 
+    def test_equality_origin(self):
+        actual = Point2D()
+        expected = Point2D(0, 0)
+        self.assertEqual(expected, actual)
+
 
 if __name__ == '__main__':
     unittest.main()
