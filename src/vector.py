@@ -81,25 +81,13 @@ class AbstractPointVector(ABC):
         :param other: Vector2D
         :return: new Vector2D sum of self and other
         """
+        if isinstance(other, Point):
+            return other + self      # Point + Vector = Point
         return self.__class__(*(self_c + other_c for self_c, other_c in zip(self, other)))
 
 
 class Vector(AbstractPointVector):
     pass
-
-
-# class TwoD(AbstractPointVector):
-#
-#     def __init__(self, x: Scalar = 0.0, y: Scalar = 0.0) -> None:
-#         self.x = x
-#         self.y = y
-#         super().__init__((self.x, self.y))
-#
-#     def __str__(self):
-#         return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
-#
-#     def __repr__(self):
-#         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
 
 class Vector2D(Vector):
@@ -287,7 +275,7 @@ class Point(AbstractPointVector):
     pass
 
 
-class Point2D(AbstractPointVector):
+class Point2D(Point):
 
     def __init__(self, x: Scalar = 0.0, y: Scalar = 0.0) -> None:
         self.x = x
