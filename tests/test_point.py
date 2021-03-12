@@ -295,6 +295,14 @@ class TestPointVectorInteraction(unittest.TestCase):
             _ = p0 + p1
         self.assertEqual(expected, str(e.exception))
 
+    def test_add_Point_w_Vector_of_incompatible_size(self):
+        p0 = Point(1, 2, 3, 4)
+        v0 = Vector(4, 3, 2, 1, 0)
+        expected = "Incompatible operands sizes"
+        with self.assertRaises(ValueError) as e:
+            _ = p0 + v0
+        self.assertEqual(expected, str(e.exception))
+
 
 if __name__ == '__main__':
     unittest.main()
