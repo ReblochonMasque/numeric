@@ -43,6 +43,11 @@ class TestPoint(unittest.TestCase):
         expected = Point(1, 0, 0, 0, 0)
         self.assertEqual(expected, actual)
 
+    def test_equality_2(self):
+        actual = Point(0, 1, 0, 3)
+        expected = Point(0, 1, 0, 3)
+        self.assertEqual(expected, actual)
+
 
 class TestPoint2D(unittest.TestCase):
 
