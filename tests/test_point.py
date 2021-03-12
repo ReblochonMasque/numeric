@@ -104,6 +104,14 @@ class TestPoint(unittest.TestCase):
             print([v])
         self.assertEqual(expected, actual.getvalue())
 
+    def test_clone_0(self):
+        """test clone values are same as original"""
+        expected = Point(77.4, -85.9, 817.2, 99.99)
+        original = Point(77.4, -85.9, 817.2, 99.99)
+        clone = original.clone()
+        self.assertEqual(expected, clone)
+        self.assertEqual(original, clone)
+
 
 class TestPoint2D(unittest.TestCase):
 
