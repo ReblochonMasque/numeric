@@ -42,6 +42,11 @@ class TestVector(unittest.TestCase):
         expected = Vector(1, 0, 0, 0, 0)
         self.assertEqual(expected, actual)
 
+    def test_equality_2(self):
+        actual = Vector(0, 1, 0, 3)
+        expected = Vector(0, 1, 0, 3)
+        self.assertEqual(expected, actual)
+
     def test_str_0(self):
         expected = 'Vector(1.00, 2.01, 3.79, 4.10)\n'
         v = Vector(1.0001, 2.009, 3.78987, 4.1)
