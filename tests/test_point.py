@@ -82,6 +82,14 @@ class TestPoint(unittest.TestCase):
         self.assertTrue(Point(0, -2, -2, -2))
 
     def test_str_0(self):
+        expected = 'Point(1.00, 2.01, 3.79, 4.10)\n'
+        v = Point(1.0001, 2.009, 3.78987, 4.1)
+        actual = StringIO()
+        with redirect_stdout(actual):
+            print(v)
+        self.assertEqual(expected, actual.getvalue())
+
+    def test_str_1(self):
         expected = 'Point(0.00, 0.00, 0.00, 0.00, 55.01)\n'
         actual = StringIO()
         with redirect_stdout(actual):
