@@ -259,8 +259,13 @@ class TestPoint2D(unittest.TestCase):
         self.assertEqual(clone_x, clone.x)     # assert clone not mutated
         self.assertEqual(clone_y, clone.y)
 
-    def test_add_Point_with_Point(self):
-        pass
+    def test_add_Point2D_with_Point2D(self):
+        p0 = Point2D(-1, -2)
+        p1 = Point2D(1, 2)
+        expected = "cannot add two Point"
+        with self.assertRaises(TypeError) as e:
+            _ = p0 + p1
+        self.assertEqual(expected, str(e.exception))
 
 
 class TestPointVectorInteraction(unittest.TestCase):
