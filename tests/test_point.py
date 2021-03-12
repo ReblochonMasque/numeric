@@ -272,6 +272,13 @@ class TestPointVectorInteraction(unittest.TestCase):
         actual = p + v
         self.assertEqual(expected, actual)
 
+    def test_add_Vector_w_Point(self):
+        expected = Point(-2, 1, 3, -4)
+        p = Point(4, 6, -7, 8)
+        v = Vector(-6, -5, 10, -12)
+        actual = v + p
+        self.assertEqual(expected, actual)
+
 
 if __name__ == '__main__':
     unittest.main()
