@@ -7,7 +7,7 @@ classes to represent Point2D and Vector2D
 import math
 
 from abc import ABC
-from typing import Iterator, Union
+from typing import Iterator, List, Union
 
 
 Scalar = Union[int, float]
@@ -21,7 +21,7 @@ class AbstractPointVector(ABC):
     def __init__(self, x: Scalar = 0.0, y: Scalar = 0.0) -> None:
         self.x = x
         self.y = y
-        self._coords = [self.x, self.y]
+        self._coords: List[Scalar] = [self.x, self.y]
 
     def __iter__(self) -> Iterator:
         for coord in self._coords:
@@ -35,8 +35,10 @@ class AbstractPointVector(ABC):
         assert other is not None
         if not isinstance(other, type(self)) or len(self._coords) != len(other._coords):
             return False
-        return (math.isclose(self.x, other.x, abs_tol=self.EPSILON) and
-                math.isclose(self.y, other.y, abs_tol=self.EPSILON))
+        for self_c, other_c in zip(self, other):
+            if not math.isclose(self_c, other_c, abs_tol=self.EPSILON):
+                return False
+        return True
 
     def __ne__(self, other: 'AbstractPointVector') -> bool:
         """tests for inequality between self and other
@@ -98,6 +100,7 @@ class Point2D(AbstractPointVector):
         if not isinstance(other, Vector2D):
             raise TypeError
         self.x, self.y = self.x + other.x, self.y + other.y
+        self._coords = [self.x, self.y]
         return self
 
     def __sub__(self, other: Union['Point2D', 'Vector2D']) -> Union['Point2D', 'Vector2D']:
@@ -119,6 +122,7 @@ class Point2D(AbstractPointVector):
         if not isinstance(other, Vector2D):
             raise TypeError
         self.x, self.y = self.x - other.x, self.y - other.y
+        self._coords = [self.x, self.y]
         return self
 
     # POINT
@@ -159,6 +163,7 @@ class Vector2D(Vector):
         if not isinstance(other, Vector2D):
             raise TypeError
         self.x, self.y = self.x + other.x, self.y + other.y
+        self._coords = [self.x, self.y]
         return self
 
     def __sub__(self, other: 'Vector2D') -> 'Vector2D':
@@ -180,6 +185,7 @@ class Vector2D(Vector):
         if not isinstance(other, Vector2D):
             raise TypeError
         self.x, self.y = self.x - other.x, self.y - other.y
+        self._coords = [self.x, self.y]
         return self
 
     def __neg__(self) -> 'Vector2D':
@@ -212,6 +218,7 @@ class Vector2D(Vector):
         :return: mutated self
         """
         self.x, self.y = self.x * factor, self.y * factor
+        self._coords = [self.x, self.y]
         return self
 
     def __truediv__(self, divisor: Scalar) -> 'Vector2D':
@@ -233,6 +240,7 @@ class Vector2D(Vector):
         if divisor == 0:
             raise ValueError
         self.x, self.y = self.x / divisor, self.y / divisor
+        self._coords = [self.x, self.y]
         return self
 
     def __floordiv__(self, divisor: Scalar) -> 'Vector2D':
@@ -254,6 +262,7 @@ class Vector2D(Vector):
         if divisor == 0:
             raise ValueError
         self.x, self.y = self.x // divisor, self.y // divisor
+        self._coords = [self.x, self.y]
         return self
 
     def unit(self) -> 'Vector2D':
