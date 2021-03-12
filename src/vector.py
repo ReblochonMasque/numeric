@@ -61,11 +61,12 @@ class AbstractPointVector(ABC):
         return not all(math.isclose(coord, 0, abs_tol=self.EPSILON) for coord in self._coords)
 
     def __str__(self):
-        vals = [f'{v: .2f}' for v in self._coords]
+        vals = [f'{v:.2f}' for v in self._coords]
         return f'{self.__class__.__name__}({", ".join(vals)})'
 
-    # def __repr__(self):
-    #     return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
+    def __repr__(self):
+        vals = [f'{v}' for v in self._coords]
+        return f'{self.__class__.__name__}({", ".join(vals)})'
 
     def clone(self) -> 'AbstractPointVector':
         """clones self and returns it

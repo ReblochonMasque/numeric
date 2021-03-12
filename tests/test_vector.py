@@ -21,13 +21,20 @@ class TestVector(unittest.TestCase):
         self.assertIsInstance(Vector(values), Vector)
 
     def test_str_0(self):
-        expected = 'Vector( 1.00,  2.01,  3.79,  4.10)\n'
+        expected = 'Vector(1.00, 2.01, 3.79, 4.10)\n'
         v = Vector((1.0001, 2.009, 3.78987, 4.1))
         actual = StringIO()
         with redirect_stdout(actual):
             print(v)
         self.assertEqual(expected, actual.getvalue())
 
+    def test_repr_0(self):
+        expected = '[Vector(1.0001, 2.009, 3.78987, 4.1)]\n'
+        v = Vector((1.0001, 2.009, 3.78987, 4.1))
+        actual = StringIO()
+        with redirect_stdout(actual):
+            print([v])
+        self.assertEqual(expected, actual.getvalue())
 
 class TestVector2D(unittest.TestCase):
 
