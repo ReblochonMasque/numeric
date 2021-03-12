@@ -81,6 +81,13 @@ class TestPoint(unittest.TestCase):
     def test_bool_3(self):
         self.assertTrue(Point(0, -2, -2, -2))
 
+    def test_str_0(self):
+        expected = 'Point(0.00, 0.00, 0.00, 0.00, 55.01)\n'
+        actual = StringIO()
+        with redirect_stdout(actual):
+            print(Point(0, 0, 0, 0, 55.00999))
+        self.assertEqual(expected, actual.getvalue())
+
 
 class TestPoint2D(unittest.TestCase):
 
