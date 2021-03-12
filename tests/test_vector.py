@@ -280,8 +280,7 @@ class TestVector2D(unittest.TestCase):
 
     def test_add_instance(self):
         actual = Vector2D(1, 0) + Vector2D(0, 1)
-        expected = Vector2D(1, 1)
-        self.assertIsInstance(expected, Vector2D)
+        self.assertIsInstance(actual, Vector2D)
 
     def test_mul_1(self):
         actual = Vector2D(1, 2) * 2
