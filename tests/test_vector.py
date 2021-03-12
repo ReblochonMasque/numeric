@@ -130,6 +130,19 @@ class TestVector(unittest.TestCase):
         self.assertEqual(orig_c, original._coords[2])
         self.assertEqual(orig_d, original._coords[3])
 
+    def test_clone_3(self):
+        """test mutate original values do no mutate clone"""
+        original = Vector(77.4, -85.9, 817.2, 99.99)
+        clone = original.clone()
+        clone_a, clone_b, clone_c, clone_d = clone               # track clone values
+        # @todo refactor __getitem__ __setitem__
+        #                                                        # mutate the original
+        original._coords[0], original._coords[1], original._coords[2], original._coords[3] = 22, -42, 17, 32
+        self.assertEqual(clone_a, clone._coords[0])              # assert clone not mutated
+        self.assertEqual(clone_b, clone._coords[1])
+        self.assertEqual(clone_c, clone._coords[2])
+        self.assertEqual(clone_d, clone._coords[3])
+
     def test_add(self):
         val0, val1 = (1, 0, 0, 0, 1), (0, 1, 1, 1, 0)
         actual = Vector(*val0) + Vector(*val1)
