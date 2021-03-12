@@ -111,6 +111,15 @@ class TestAbstractVector2DWithPoint2D(unittest.TestCase):
         self.assertEqual(orig_x, original.x)   # assert original not mutated
         self.assertEqual(orig_y, original.y)
 
+    def test_clone_3(self):
+        """test mutate original values do no mutate clone"""
+        original = Point2D(77.4, -85.9)
+        clone = original.clone()
+        clone_x, clone_y = clone               # track clone values
+        original.x, original.y = 22, -42       # mutate original
+        self.assertEqual(clone_x, clone.x)     # assert clone not mutated
+        self.assertEqual(clone_y, clone.y)
+
 
 if __name__ == '__main__':
     unittest.main()
