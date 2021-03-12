@@ -33,7 +33,7 @@ class AbstractPointVector(ABC):
         :return: bool, True if self and other are equal, False otherwise
         """
         assert other is not None
-        if not isinstance(other, type(self)):
+        if not isinstance(other, type(self)) or len(self._coords) != len(other._coords):
             return False
         return (math.isclose(self.x, other.x, abs_tol=self.EPSILON) and
                 math.isclose(self.y, other.y, abs_tol=self.EPSILON))
