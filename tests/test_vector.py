@@ -63,6 +63,11 @@ class TestVector(unittest.TestCase):
         actual = hash(Vector(0, 1, 0, 0))
         self.assertEqual(expected, actual)
 
+    def test_hash_2(self):
+        notexpected = hash((1, 0, 1, 0))
+        actual = hash(Vector(0, 1, 0, 1))
+        self.assertNotEqual(notexpected, actual)
+
     def test_str_0(self):
         expected = 'Vector(1.00, 2.01, 3.79, 4.10)\n'
         v = Vector(1.0001, 2.009, 3.78987, 4.1)
