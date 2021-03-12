@@ -76,13 +76,15 @@ class AbstractPointVector(ABC):
         return self.__class__(*self._coords)
 
     def __add__(self, other: 'AbstractPointVector') -> 'AbstractPointVector':
-        """returns a new Vector2D sum of self and other
+        """returns a new Vector sum of self and other
 
         :param other: Vector2D
         :return: new Vector2D sum of self and other
         """
         if isinstance(other, Point):
-            return other + self      # Point + Vector = Point
+            # Point + Vector = Point
+            return other + self
+        # Vector + Vector = Vector
         return self.__class__(*(self_c + other_c for self_c, other_c in zip(self, other)))
 
 
