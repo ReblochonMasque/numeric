@@ -112,6 +112,12 @@ class TestPoint(unittest.TestCase):
         self.assertEqual(expected, clone)
         self.assertEqual(original, clone)
 
+    def test_clone_1(self):
+        """test clone id not same as original id"""
+        original = Point(77.4, -85.9, 817.2, 99.99)
+        clone = original.clone()
+        self.assertNotEqual(id(clone), id(original))
+
 
 class TestPoint2D(unittest.TestCase):
 
