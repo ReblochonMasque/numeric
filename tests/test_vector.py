@@ -3,10 +3,26 @@ import unittest
 from contextlib import redirect_stderr, redirect_stdout
 from io import StringIO
 
-from numeric.src.vector import Vector2D
+from numeric.src.vector import Vector, Vector2D
 
 
-class TestAbstractVector2D(unittest.TestCase):
+class TestVector(unittest.TestCase):
+
+    def test_instance_0(self):
+        values = (0, 0, 0, 0, 0, 0)
+        self.assertIsInstance(Vector(values), Vector)
+
+    def test_instance_1(self):
+        values = (1, 2, 3, 4, 5)
+        self.assertIsInstance(Vector(values), Vector)
+
+    def test_instance_2(self):
+        values = (1, 2)
+        self.assertIsInstance(Vector(values), Vector)
+
+
+
+class TestVector2D(unittest.TestCase):
 
     def test_instance_0(self):
         self.assertIsInstance(Vector2D(), Vector2D)
@@ -120,13 +136,17 @@ class TestAbstractVector2D(unittest.TestCase):
         self.assertEqual(clone_x, clone.x)     # assert clone not mutated
         self.assertEqual(clone_y, clone.y)
 
-
-class TestVector2D(unittest.TestCase):
+##############################
 
     def test_add(self):
         actual = Vector2D(1, 0) + Vector2D(0, 1)
         expected = Vector2D(1, 1)
         self.assertEqual(expected, actual)
+
+    def test_add_instance(self):
+        actual = Vector2D(1, 0) + Vector2D(0, 1)
+        expected = Vector2D(1, 1)
+        self.assertIsInstance(expected, Vector2D)
 
     def test_mul_1(self):
         actual = Vector2D(1, 2) * 2

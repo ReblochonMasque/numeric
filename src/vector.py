@@ -19,7 +19,7 @@ class AbstractPointVector(ABC):
     EPSILON = 1e-14
 
     def __init__(self, coords: Iterable[Scalar]) -> None:
-        self._coords = coords[:]
+        self._coords = list(coords)
 
     def __iter__(self) -> Iterator:
         for coord in self._coords:
@@ -73,6 +73,14 @@ class AbstractPointVector(ABC):
         :return: AbstractPointVector, clone of self
         """
         return self.__class__(*self._coords)
+
+    def __add__(self, other: 'AbstractPointVector') -> 'AbstractPointVector':
+        """returns a new Vector2D sum of self and other
+
+        :param other: Vector2D
+        :return: new Vector2D sum of self and other
+        """
+        return self.__class__(*(self_c + other_c for self_c, other_c in zip(self, other)))
 
 
 class TwoD(AbstractPointVector):
@@ -150,17 +158,21 @@ class Point2D(TwoD):
     #     return self.__class__(*((selfv + otherv) / 2 for selfv, otherv in zip(self, other)))
 
 
+class Vector(AbstractPointVector):
+    pass
+
+
 class Vector2D(TwoD):
 
-    def __add__(self, other: Union['Point2D', 'Vector2D']) -> Union['Point2D', 'Vector2D']:
-        """returns a new Vector2D sum of self and other
-
-        :param other: Vector2D
-        :return: new Vector2D sum of self and other
-        """
-        if isinstance(other, Point2D):
-            return other + self
-        return Vector2D(self.x + other.x, self.y + other.y)
+    # def __add__(self, other: Union['Point2D', 'Vector2D']) -> Union['Point2D', 'Vector2D']:
+    #     """returns a new Vector2D sum of self and other
+    #
+    #     :param other: Vector2D
+    #     :return: new Vector2D sum of self and other
+    #     """
+    #     if isinstance(other, Point2D):
+    #         return other + self
+    #     return Vector2D(self.x + other.x, self.y + other.y)
 
     def __iadd__(self, other: 'Vector2D') -> 'Vector2D':
         """adds other to self and returns it
