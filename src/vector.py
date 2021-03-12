@@ -272,7 +272,20 @@ class Vector2D(Vector):
 
 
 class Point(AbstractPointVector):
-    pass
+
+    def __add__(self, other: 'AbstractPointVector') -> 'AbstractPointVector':
+        """returns a new Vector2D sum of self and other
+
+        :param other: Vector2D
+        :return: new Vector2D sum of self and other
+        """
+        if isinstance(other, Point):
+            raise TypeError("cannot add two Point")
+        elif not isinstance(other, Vector):
+            raise TypeError("unknown type to add to a Point")
+        if len(self._coords) != len(other._coords):
+            raise ValueError("Incompatible operands sizes")
+        return self.__class__(*(self_c + other_c for self_c, other_c in zip(self, other)))
 
 
 class Point2D(Point):
@@ -288,16 +301,16 @@ class Point2D(Point):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    def __add__(self, other: 'Vector2D') -> 'Point2D':
-        """returns a new Vector2D sum of self and other
-
-        can add Point2D with Vector2D, but not Point2D with Point2D
-        :param other: Vector2D
-        :return: new Vector2D sum of self and other
-        """
-        if not isinstance(other, Vector2D):
-            raise TypeError
-        return Point2D(self.x + other.x, self.y + other.y)
+    # def __add__(self, other: 'Vector2D') -> 'Point2D':
+    #     """returns a new Vector2D sum of self and other
+    #
+    #     can add Point2D with Vector2D, but not Point2D with Point2D
+    #     :param other: Vector2D
+    #     :return: new Vector2D sum of self and other
+    #     """
+    #     if not isinstance(other, Vector2D):
+    #         raise TypeError
+    #     return Point2D(self.x + other.x, self.y + other.y)
 
     def __iadd__(self, other: 'Vector2D') -> 'Point2D':
         """adds other to self and returns self
@@ -362,5 +375,8 @@ if __name__ == '__main__':
     print(w, w.mag())
     print(a := w.unit(), a.mag())
 
-    v = Vector((1.0001, 2.009, 3.78987, 4.1))
+    p = Point(1, 2, 3, 4)
+    v = Vector(1.0001, 2.009, 3.78987, 4.1)
     print(v)
+    pp = p + v
+    print(pp)
