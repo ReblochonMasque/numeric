@@ -292,17 +292,6 @@ class Point2D(Point):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    # def __add__(self, other: 'Vector2D') -> 'Point2D':
-    #     """returns a new Vector2D sum of self and other
-    #
-    #     can add Point2D with Vector2D, but not Point2D with Point2D
-    #     :param other: Vector2D
-    #     :return: new Vector2D sum of self and other
-    #     """
-    #     if not isinstance(other, Vector2D):
-    #         raise TypeError
-    #     return Point2D(self.x + other.x, self.y + other.y)
-
     def __iadd__(self, other: 'Vector2D') -> 'Point2D':
         """adds other to self and returns self
 
