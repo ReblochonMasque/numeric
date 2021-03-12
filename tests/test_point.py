@@ -81,6 +81,13 @@ class TestAbstractVector2DWithPoint2D(unittest.TestCase):
             print(Point2D(x=0.00, y=0.00))
         self.assertEqual(expected, actual.getvalue())
 
+    def test_repr_0(self):
+        expected = '[Point2D(x=1.75449, y=-7.67882)]\n'
+        actual = StringIO()
+        with redirect_stdout(actual):
+            print([Point2D(x=1.75449, y=-7.67882)])
+        self.assertEqual(expected, actual.getvalue())
+
 
 if __name__ == '__main__':
     unittest.main()
