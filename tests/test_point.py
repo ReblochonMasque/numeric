@@ -96,6 +96,14 @@ class TestPoint(unittest.TestCase):
             print(Point(0, 0, 0, 0, 55.00999))
         self.assertEqual(expected, actual.getvalue())
 
+    def test_repr_0(self):
+        expected = '[Point(1.0001, 2.009, 3.78987, 4.1)]\n'
+        v = Point(1.0001, 2.009, 3.78987, 4.1)
+        actual = StringIO()
+        with redirect_stdout(actual):
+            print([v])
+        self.assertEqual(expected, actual.getvalue())
+
 
 class TestPoint2D(unittest.TestCase):
 
