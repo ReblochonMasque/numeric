@@ -279,6 +279,14 @@ class TestPointVectorInteraction(unittest.TestCase):
         actual = v + p
         self.assertEqual(expected, actual)
 
+    def test_add_Point_w_Point(self):
+        p0 = Point(1, 2, 3, 4)
+        p1 = Point(4, 3, 2, 1)
+        expected = "cannot add two Point"
+        with self.assertRaises(TypeError) as e:
+            _ = p0 + p1
+        self.assertEqual(expected, str(e.exception))
+
 
 if __name__ == '__main__':
     unittest.main()
