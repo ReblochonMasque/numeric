@@ -17,6 +17,11 @@ class TestPoint(unittest.TestCase):
     def test_instance_1(self):
         self.assertIsInstance(Point(1, 2, 3, 4), Point)
 
+    def test_instance_2(self):
+        # @todo Maybe this should return a Point2D
+        values = (1, 2)
+        self.assertIsInstance(Point(*values), Point)
+
     def test_iter_0(self):
         expecteds = (3.2, 7.3, 8.987, -79.1)
         actuals = Point(3.2, 7.3, 8.987, -79.1)

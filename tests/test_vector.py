@@ -17,6 +17,7 @@ class TestVector(unittest.TestCase):
         self.assertIsInstance(Vector(*values), Vector)
 
     def test_instance_2(self):
+        # @todo Maybe this should return a Vector2D
         values = (1, 2)
         self.assertIsInstance(Vector(*values), Vector)
 
