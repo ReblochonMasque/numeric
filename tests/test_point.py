@@ -88,6 +88,14 @@ class TestAbstractVector2DWithPoint2D(unittest.TestCase):
             print([Point2D(x=1.75449, y=-7.67882)])
         self.assertEqual(expected, actual.getvalue())
 
+    def test_clone_0(self):
+        """test clone values are same as original"""
+        expected = Point2D(77.4, -85.9)
+        original = Point2D(77.4, -85.9)
+        clone = original.clone()
+        self.assertEqual(expected, clone)
+        self.assertEqual(original, clone)
+
 
 if __name__ == '__main__':
     unittest.main()
