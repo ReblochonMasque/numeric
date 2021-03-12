@@ -53,7 +53,7 @@ class AbstractPointVector(ABC):
         uses the tuple (self.x, self.y)
         :return: int
         """
-        return hash((self.x, self.y))
+        return hash(tuple(self._coords))
 
     def __bool__(self) -> bool:
         """tests if the values of self are null/zero
