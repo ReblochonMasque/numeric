@@ -17,6 +17,12 @@ class TestAbstractVector2DWithPoint2D(unittest.TestCase):
         for expected, actual in zip(expecteds, actuals):
             self.assertEqual(expected, actual)
 
+    def test_iter_1(self):
+        expected_x, expected_y = (3.2, 7.3)
+        actual_x, actual_y = Point2D(3.2, 7.3)
+        self.assertEqual(expected_x, actual_x)
+        self.assertEqual(expected_y, actual_y)
+
 
 if __name__ == '__main__':
     unittest.main()
