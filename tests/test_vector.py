@@ -10,15 +10,15 @@ class TestVector(unittest.TestCase):
 
     def test_instance_0(self):
         values = (0, 0, 0, 0, 0, 0)
-        self.assertIsInstance(Vector(values), Vector)
+        self.assertIsInstance(Vector(*values), Vector)
 
     def test_instance_1(self):
         values = (1, 2, 3, 4, 5)
-        self.assertIsInstance(Vector(values), Vector)
+        self.assertIsInstance(Vector(*values), Vector)
 
     def test_instance_2(self):
         values = (1, 2)
-        self.assertIsInstance(Vector(values), Vector)
+        self.assertIsInstance(Vector(*values), Vector)
 
     def test_str_0(self):
         expected = 'Vector(1.00, 2.01, 3.79, 4.10)\n'
