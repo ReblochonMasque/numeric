@@ -104,16 +104,6 @@ class Vector2D(Vector):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    # def __add__(self, other: Union['Point2D', 'Vector2D']) -> Union['Point2D', 'Vector2D']:
-    #     """returns a new Vector2D sum of self and other
-    #
-    #     :param other: Vector2D
-    #     :return: new Vector2D sum of self and other
-    #     """
-    #     if isinstance(other, Point2D):
-    #         return other + self
-    #     return Vector2D(self.x + other.x, self.y + other.y)
-
     def __iadd__(self, other: 'Vector2D') -> 'Vector2D':
         """adds other to self and returns it
 
