@@ -3,12 +3,15 @@ import unittest
 from contextlib import redirect_stderr, redirect_stdout
 from io import StringIO
 
-from numeric.src.vector import Point2D
+from numeric.src.vector import Point, Point2D
 
 
 class TestPoint(unittest.TestCase):
     """Tests Suite for instances of Point (dim >3 )
     """
+
+    def test_instance_0(self):
+        self.assertIsInstance(Point(1, 2, 3, 4), Point)
 
 
 class TestPoint2D(unittest.TestCase):
