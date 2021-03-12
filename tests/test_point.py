@@ -9,7 +9,7 @@ import unittest
 from contextlib import redirect_stdout
 from io import StringIO
 
-from numeric.src.vector import Point, Point2D, Vector
+from numeric.src.vector import Point, Point2D, Vector, Vector2D
 
 
 class TestPoint(unittest.TestCase):
@@ -321,6 +321,16 @@ class TestPointVectorInteraction(unittest.TestCase):
         with self.assertRaises(ValueError) as e:
             _ = v0 + p0
         self.assertEqual(expected, str(e.exception))
+
+
+class TestPointVectorInteraction(unittest.TestCase):
+
+    def test_add_Point2D_w_Vector2D(self):
+        expected = Point2D(-2, 1)
+        p = Point2D(4, 6)
+        v = Vector2D(-6, -5)
+        actual = p + v
+        self.assertEqual(expected, actual)
 
 
 if __name__ == '__main__':
