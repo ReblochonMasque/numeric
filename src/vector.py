@@ -7,7 +7,7 @@ classes to represent Point2D and Vector2D
 import math
 
 from abc import ABC
-from typing import Iterator, List, Union
+from typing import Iterable, Iterator, List, Union
 
 
 Scalar = Union[int, float]
@@ -18,10 +18,8 @@ class AbstractPointVector(ABC):
     """
     EPSILON = 1e-14
 
-    def __init__(self, x: Scalar = 0.0, y: Scalar = 0.0) -> None:
-        self.x = x
-        self.y = y
-        self._coords: List[Scalar] = [self.x, self.y]
+    def __init__(self, coords: Iterable[Scalar]) -> None:
+        self._coords = coords[:]
 
     def __iter__(self) -> Iterator:
         for coord in self._coords:
@@ -77,7 +75,15 @@ class AbstractPointVector(ABC):
         return self.__class__(*self._coords)
 
 
-class Point2D(AbstractPointVector):
+class TwoD(AbstractPointVector):
+
+    def __init__(self, x: Scalar = 0.0, y: Scalar = 0.0) -> None:
+        self.x = x
+        self.y = y
+        super().__init__((self.x, self.y))
+
+
+class Point2D(TwoD):
 
     def __str__(self):
         return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
@@ -144,11 +150,7 @@ class Point2D(AbstractPointVector):
     #     return self.__class__(*((selfv + otherv) / 2 for selfv, otherv in zip(self, other)))
 
 
-class Vector(AbstractPointVector):
-    pass
-
-
-class Vector2D(Vector):
+class Vector2D(TwoD):
 
     def __str__(self):
         return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
