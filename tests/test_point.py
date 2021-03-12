@@ -11,6 +11,10 @@ class TestPoint(unittest.TestCase):
     """
 
     def test_instance_0(self):
+        values = (0, 0, 0, 0, 0, 0)
+        self.assertIsInstance(Point(*values), Point)
+
+    def test_instance_1(self):
         self.assertIsInstance(Point(1, 2, 3, 4), Point)
 
     def test_iter_0(self):
