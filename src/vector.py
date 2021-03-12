@@ -82,14 +82,20 @@ class TwoD(AbstractPointVector):
         self.y = y
         super().__init__((self.x, self.y))
 
-
-class Point2D(TwoD):
-
     def __str__(self):
         return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
 
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
+
+
+class Point2D(TwoD):
+
+    # def __str__(self):
+    #     return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
+    #
+    # def __repr__(self):
+    #     return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
     def __add__(self, other: 'Vector2D') -> 'Point2D':
         """returns a new Vector2D sum of self and other
@@ -152,11 +158,11 @@ class Point2D(TwoD):
 
 class Vector2D(TwoD):
 
-    def __str__(self):
-        return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
-
-    def __repr__(self):
-        return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
+    # def __str__(self):
+    #     return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
+    #
+    # def __repr__(self):
+    #     return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
     def __add__(self, other: Union['Point2D', 'Vector2D']) -> Union['Point2D', 'Vector2D']:
         """returns a new Vector2D sum of self and other
