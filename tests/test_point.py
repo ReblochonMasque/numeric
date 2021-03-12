@@ -6,7 +6,7 @@ Tests Suite for point
 
 import unittest
 
-from contextlib import redirect_stderr, redirect_stdout
+from contextlib import redirect_stdout
 from io import StringIO
 
 from numeric.src.vector import Point, Point2D, Vector
