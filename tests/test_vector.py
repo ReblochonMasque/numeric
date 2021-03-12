@@ -53,6 +53,11 @@ class TestVector(unittest.TestCase):
     def test_inequality_1(self):
         self.assertNotEqual(Vector(-1, 0, 0, -7.35), Vector(-1, 0, 0, 7.35))
 
+    def test_hash_0(self):
+        expected = hash((22.345, -176.09, 142.3, 17.01))
+        actual = hash(Vector(22.345, -176.09, 142.3, 17.01))
+        self.assertEqual(expected, actual)
+
     def test_str_0(self):
         expected = 'Vector(1.00, 2.01, 3.79, 4.10)\n'
         v = Vector(1.0001, 2.009, 3.78987, 4.1)
