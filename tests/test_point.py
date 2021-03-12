@@ -11,6 +11,12 @@ class TestAbstractVector2DWithPoint2D(unittest.TestCase):
     def test_instance_1(self):
         self.assertIsInstance(Point2D(x=2.2, y=-3.7), Point2D)
 
+    def test_iter_0(self):
+        expecteds = (3.2, 7.3)
+        actuals = Point2D(3.2, 7.3)
+        for expected, actual in zip(expecteds, actuals):
+            self.assertEqual(expected, actual)
+
 
 if __name__ == '__main__':
     unittest.main()
