@@ -62,6 +62,7 @@ class AbstractPointVector(ABC):
         """
         return not all(math.isclose(coord, 0, abs_tol=self.EPSILON) for coord in self._coords)
 
+    # @todo generalize to ndim
     # def __str__(self):
     #     return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
     #
@@ -73,7 +74,7 @@ class AbstractPointVector(ABC):
 
         :return: AbstractPointVector, clone of self
         """
-        return self.__class__(self.x, self.y)
+        return self.__class__(*self._coords)
 
 
 class Point2D(AbstractPointVector):
