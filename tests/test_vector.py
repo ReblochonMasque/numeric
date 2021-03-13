@@ -238,6 +238,11 @@ class TestVector(unittest.TestCase):
         expected = Vector(-2, -4, -6, -8)
         self.assertEqual(expected, actual)
 
+    def test_mul_2(self):
+        actual = Vector(-1, -2, 3, 4) * 0
+        expected = Vector(0, 0, 0, 0)
+        self.assertEqual(expected, actual)
+
 
 class TestVector2D(unittest.TestCase):
 
