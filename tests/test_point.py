@@ -427,6 +427,7 @@ class TestPointVectorInteraction(unittest.TestCase):
             _ = p0 - p1
         self.assertEqual(expected, str(e.exception))
 
+
 class TestPoint2DVector2DInteraction(unittest.TestCase):
 
     def test_add_Point2D_w_Vector2D(self):
