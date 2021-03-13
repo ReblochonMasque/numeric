@@ -161,6 +161,12 @@ class TestVector(unittest.TestCase):
         actual = Vector(*val0) + Vector(*val1)
         self.assertIsInstance(actual, Vector)
 
+    def test_iadd(self):
+        expected = Vector(-4, 5, 0, 42)
+        actual = Vector(2, 1, -1, 40)
+        actual += Vector(-6, 4, 1, 2)
+        self.assertEqual(expected, actual)
+
 
 class TestVector2D(unittest.TestCase):
 
