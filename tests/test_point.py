@@ -481,6 +481,14 @@ class TestPoint2DVector2DInteraction(unittest.TestCase):
             _ = v0 - p0
         self.assertEqual(expected, str(e.exception))
 
+    def test_sub_Vector2D_from_Point2D(self):
+        """Point - Vector = Point"""
+        expected = Point2D(7, -5)
+        p0 = Point2D(0, 0)
+        v0 = Vector2D(-7, 5)
+        actual = p0 - v0
+        self.assertEqual(expected, actual)
+
 
 if __name__ == '__main__':
     unittest.main()
