@@ -160,13 +160,37 @@ class Vector(AbstractPointVector):
         """
         return self * factor
 
+    def __imul__(self, factor: Scalar) -> 'Vector':
+        """returns self scaled by scalar
+
+        :param factor: a Scalar
+        :return: mutated self
+        """
+        self.x, self.y = self.x * factor, self.y * factor
+        self._coords = [self.x, self.y]
+        return self
+
 
 class Vector2D(Vector):
 
     def __init__(self, x: Scalar = 0.0, y: Scalar = 0.0) -> None:
-        self.x = x
-        self.y = y
-        super().__init__(self.x, self.y)
+        super().__init__(x, y)
+
+    @property
+    def x(self) -> Scalar:
+        return self._coords[0]
+
+    @property
+    def y(self) -> Scalar:
+        return self._coords[1]
+
+    @x.setter
+    def x(self, val: Scalar) -> None:
+        self._coords[0] = val
+
+    @y.setter
+    def y(self, val: Scalar) -> None:
+        self._coords[1] = val
 
     def __str__(self):
         return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
@@ -174,15 +198,26 @@ class Vector2D(Vector):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    def __imul__(self, factor: Scalar) -> 'Vector2D':
-        """returns self scaled by scalar
+    # def __init__(self, x: Scalar = 0.0, y: Scalar = 0.0) -> None:
+    #     self.x = x
+    #     self.y = y
+    #     super().__init__(self.x, self.y)
+    #
+    # def __str__(self):
+    #     return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
+    #
+    # def __repr__(self):
+    #     return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-        :param factor: a float
-        :return: mutated self
-        """
-        self.x, self.y = self.x * factor, self.y * factor
-        self._coords = [self.x, self.y]
-        return self
+    # def __imul__(self, factor: Scalar) -> 'Vector2D':
+    #     """returns self scaled by scalar
+    #
+    #     :param factor: a float
+    #     :return: mutated self
+    #     """
+    #     self.x, self.y = self.x * factor, self.y * factor
+    #     self._coords = [self.x, self.y]
+    #     return self
 
     def __truediv__(self, divisor: Scalar) -> 'Vector2D':
         """returns a new Vector2D equal to self scaled by divisor
@@ -314,9 +349,23 @@ class Point(AbstractPointVector):
 class Point2D(Point):
 
     def __init__(self, x: Scalar = 0.0, y: Scalar = 0.0) -> None:
-        self.x = x
-        self.y = y
-        super().__init__(self.x, self.y)
+        super().__init__(x, y)
+
+    @property
+    def x(self) -> Scalar:
+        return self._coords[0]
+
+    @property
+    def y(self) -> Scalar:
+        return self._coords[1]
+
+    @x.setter
+    def x(self, val: Scalar) -> None:
+        self._coords[0] = val
+
+    @y.setter
+    def y(self, val: Scalar) -> None:
+        self._coords[1] = val
 
     def __str__(self):
         return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
@@ -357,3 +406,9 @@ if __name__ == '__main__':
     print(v)
     pp = p + v
     print(pp)
+
+    print("-"*100)
+
+    v = Vector2D(x=1, y=2)
+    v -= Vector2D(x=1, y=2)
+    print(v, v._coords, v.x, v.y)
