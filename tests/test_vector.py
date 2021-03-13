@@ -178,6 +178,14 @@ class TestVector(unittest.TestCase):
         actual_id = id(actual)
         self.assertEqual(expected_id, actual_id)
 
+    def test_iadd_mismatched_sizes_of_operands(self):
+        expected = "mismatched sizes of operands"
+        v0 = Vector(7, 8, 0, 2, 1)
+        v1 = Vector(7, 6, 3, -2)
+        with self.assertRaises(ValueError) as e:
+            v0 += v1
+        self.assertEqual(expected, str(e.exception))
+
     def test_sub_0(self):
         expected = Vector(0, 2, -3, 4)
         v0 = Vector(7, 8, 0, 2)
