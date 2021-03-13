@@ -409,8 +409,6 @@ class TestVector2D(unittest.TestCase):
         actual_id = id(actual)
         self.assertEqual(expected_id, actual_id)
 
-    ##############################
-
     def test_sub_0(self):
         expected = Vector2D(-3, 4)
         v0 = Vector2D(0, 2)
