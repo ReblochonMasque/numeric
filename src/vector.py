@@ -197,27 +197,6 @@ class Vector2D(Vector):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    # def __init__(self, x: Scalar = 0.0, y: Scalar = 0.0) -> None:
-    #     self.x = x
-    #     self.y = y
-    #     super().__init__(self.x, self.y)
-    #
-    # def __str__(self):
-    #     return f'{self.__class__.__name__}(x={self.x :.2f}, y={self.y :.2f})'
-    #
-    # def __repr__(self):
-    #     return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
-
-    # def __imul__(self, factor: Scalar) -> 'Vector2D':
-    #     """returns self scaled by scalar
-    #
-    #     :param factor: a float
-    #     :return: mutated self
-    #     """
-    #     self.x, self.y = self.x * factor, self.y * factor
-    #     self._coords = [self.x, self.y]
-    #     return self
-
     def __truediv__(self, divisor: Scalar) -> 'Vector2D':
         """returns a new Vector2D equal to self scaled by divisor
 
