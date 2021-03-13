@@ -297,8 +297,6 @@ class TestVector2D(unittest.TestCase):
         self.assertEqual(clone_x, clone.x)     # assert clone not mutated
         self.assertEqual(clone_y, clone.y)
 
-##############################
-
     def test_add(self):
         actual = Vector2D(1, 0) + Vector2D(0, 1)
         expected = Vector2D(1, 1)
@@ -321,6 +319,8 @@ class TestVector2D(unittest.TestCase):
         actual += Vector2D(-6, 4)
         actual_id = id(actual)
         self.assertEqual(expected_id, actual_id)
+
+    ##############################
 
     def test_sub_0(self):
         expected = Vector2D(-3, 4)
