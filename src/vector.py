@@ -78,6 +78,20 @@ class AbstractPointVector(ABC):
         """
         return self.__class__(*self._coords)
 
+    def __isub__(self, other: 'Vector') -> Union['Point', 'Vector']:
+        """subtracts Vector other to self and returns self, mutated
+
+        :param other: Vector
+        :return: mutated Vector self
+        """
+        if not isinstance(other, Vector):
+            # Vector -= Point does not make sense
+            # Point -= Point does not make sense
+            raise TypeError("Can only mutate a Vector or a Point by subtracting a Vector")
+        for idx, coord in enumerate(other._coords):
+            self._coords[idx] -= coord
+        return self
+
 
 class Vector(AbstractPointVector):
 
@@ -118,18 +132,18 @@ class Vector(AbstractPointVector):
             raise TypeError("can only subtract a Vector from a Vector")
         return self.__class__(*(self_c - other_c for self_c, other_c in zip(self, other)))
 
-    def __isub__(self, other: 'Vector') -> 'Vector':
-        """subtracts Vector other to self and returns self, mutated
-
-        :param other: Vector
-        :return: mutated Vector self
-        """
-        if not isinstance(other, Vector):
-            # Vector -= Point does not make sense
-            raise TypeError("Can only mutate a Vector via subtracting a Vector")
-        for idx, coord in enumerate(other._coords):
-            self._coords[idx] -= coord
-        return self
+    # def __isub__(self, other: 'Vector') -> 'Vector':
+    #     """subtracts Vector other to self and returns self, mutated
+    #
+    #     :param other: Vector
+    #     :return: mutated Vector self
+    #     """
+    #     if not isinstance(other, Vector):
+    #         # Vector -= Point does not make sense
+    #         raise TypeError("Can only mutate a Vector via subtracting a Vector")
+    #     for idx, coord in enumerate(other._coords):
+    #         self._coords[idx] -= coord
+    #     return self
 
 
 class Vector2D(Vector):
