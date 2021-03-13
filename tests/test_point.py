@@ -347,6 +347,14 @@ class TestPoint2D(unittest.TestCase):
         actual -= Vector2D(-6, 4)
         self.assertEqual(expected, actual)
 
+    def test_isub_instance_mutated(self):
+        _ = Point2D(-2, 38)
+        actual = Point2D(-1, 40)
+        expected_id = id(actual)
+        actual -= Vector2D(1, 2)
+        actual_id = id(actual)
+        self.assertEqual(expected_id, actual_id)
+
 
 class TestPointVectorInteraction(unittest.TestCase):
 
