@@ -171,7 +171,7 @@ class TestVector(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     def test_iadd_instance_mutated(self):
-        expected = Vector(-4, 5, 0, 42)
+        _ = Vector(-4, 5, 0, 42)
         actual = Vector(2, 1, -1, 40)
         expected_id = id(actual)
         actual += Vector(-6, 4, 1, 2)
