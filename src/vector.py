@@ -109,6 +109,7 @@ class Vector(AbstractPointVector):
         :param other: Vector
         :return: new Vector subtraction of other from self
         """
+        assert len(self._coords) == len(other._coords), "mismatched sizes of operands"
         if not isinstance(other, Vector):
             raise TypeError("can only subtract a Vector from a Vector")
         return self.__class__(*(self_c - other_c for self_c, other_c in zip(self, other)))
