@@ -90,6 +90,18 @@ class Vector(AbstractPointVector):
         # Vector + Vector = Vector
         return self.__class__(*(self_c + other_c for self_c, other_c in zip(self, other)))
 
+    def __iadd__(self, other: 'Vector') -> 'Vector':
+        """adds Vector other to self and returns self, mutated
+
+        :param other: Vector
+        :return: mutated Vector self
+        """
+        if not isinstance(other, Vector):
+            raise TypeError("Can only mutate a Vector via addition with a Vector")
+        for idx, coord in enumerate(other._coords):
+            self._coords[idx] += coord
+        return self
+
 
 class Vector2D(Vector):
 
@@ -104,17 +116,17 @@ class Vector2D(Vector):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    def __iadd__(self, other: 'Vector2D') -> 'Vector2D':
-        """adds other to self and returns it
-
-        :param other: Vector2D
-        :return: mutated self
-        """
-        if not isinstance(other, Vector2D):
-            raise TypeError
-        self.x, self.y = self.x + other.x, self.y + other.y
-        self._coords = [self.x, self.y]
-        return self
+    # def __iadd__(self, other: 'Vector2D') -> 'Vector2D':
+    #     """adds other to self and returns it
+    #
+    #     :param other: Vector2D
+    #     :return: mutated self
+    #     """
+    #     if not isinstance(other, Vector2D):
+    #         raise TypeError
+    #     self.x, self.y = self.x + other.x, self.y + other.y
+    #     self._coords = [self.x, self.y]
+    #     return self
 
     def __sub__(self, other: 'Vector2D') -> 'Vector2D':
         """returns a new Vector2D sub of self and other
