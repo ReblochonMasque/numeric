@@ -348,6 +348,14 @@ class TestPoint2DVector2DInteraction(unittest.TestCase):
         actual = v + p
         self.assertEqual(expected, actual)
 
+    def test_add_Point2D_w_Point2D(self):
+        p0 = Point2D(1, 2)
+        p1 = Point2D(4, 3)
+        expected = "cannot add two Point"
+        with self.assertRaises(TypeError) as e:
+            _ = p0 + p1
+        self.assertEqual(expected, str(e.exception))
+
     def test_iadd_Vector2D_w_Point2D(self):
         """test Vector += Point"""
         p = Point2D(4, 6)
