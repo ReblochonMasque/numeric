@@ -365,7 +365,7 @@ class TestPoint2DVector2DInteraction(unittest.TestCase):
         self.assertEqual(expected, str(e.exception))
 
     def test_iadd_Vector2D_w_Point2D(self):
-        """test Vector += Point"""
+        """test Vector2D += Point2D"""
         p = Point2D(4, 6)
         v = Vector2D(-6, -5)
         with self.assertRaises(TypeError) as e:
@@ -374,7 +374,7 @@ class TestPoint2DVector2DInteraction(unittest.TestCase):
         self.assertEqual(expected, str(e.exception))
 
     def test_iadd_Point2D_w_Vector2D(self):
-        """test Vector += Point"""
+        """test Vector2D += Point2D"""
         expected = Point2D(-2, 1)
         actual = Point2D(4, 6)
         v = Vector2D(-6, -5)
