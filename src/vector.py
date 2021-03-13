@@ -298,6 +298,7 @@ class Point(AbstractPointVector):
         """calculates and returns the result of the subtraction of other from self
 
         @todo refactor type determination if possible - maybe extract function?
+        @todo add Vector3D
 
         :param other: a 'Point' or a 'Vector'
         :return: a new 'Point' if other is a Vector
