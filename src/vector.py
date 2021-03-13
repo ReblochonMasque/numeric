@@ -103,6 +103,16 @@ class Vector(AbstractPointVector):
             self._coords[idx] += coord
         return self
 
+    def __sub__(self, other: 'Vector') -> 'Vector':
+        """returns a new Vector the subtraction of other from self
+
+        :param other: Vector
+        :return: new Vector subtraction of other from self
+        """
+        if not isinstance(other, Vector):
+            raise TypeError("cannot subtract a Point from a Vector")
+        return self.__class__(*(self_c - other_c for self_c, other_c in zip(self, other)))
+
 
 class Vector2D(Vector):
 
@@ -117,15 +127,15 @@ class Vector2D(Vector):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    def __sub__(self, other: 'Vector2D') -> 'Vector2D':
-        """returns a new Vector2D sub of self and other
-
-        :param other: Vector2D
-        :return: new Vector2D sub of self and other
-        """
-        if not isinstance(other, Vector2D):
-            raise TypeError
-        return Vector2D(self.x - other.x, self.y - other.y)
+    # def __sub__(self, other: 'Vector2D') -> 'Vector2D':
+    #     """returns a new Vector2D sub of self and other
+    #
+    #     :param other: Vector2D
+    #     :return: new Vector2D sub of self and other
+    #     """
+    #     if not isinstance(other, Vector2D):
+    #         raise TypeError
+    #     return Vector2D(self.x - other.x, self.y - other.y)
 
     def __isub__(self, other: 'Vector2D') -> 'Vector2D':
         """subs other from self and returns it
