@@ -110,7 +110,7 @@ class Vector(AbstractPointVector):
         :return: new Vector subtraction of other from self
         """
         if not isinstance(other, Vector):
-            raise TypeError("cannot subtract a Point from a Vector")
+            raise TypeError("can only subtract a Vector from a Vector")
         return self.__class__(*(self_c - other_c for self_c, other_c in zip(self, other)))
 
 
