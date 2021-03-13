@@ -423,6 +423,14 @@ class TestPoint2DVector2DInteraction(unittest.TestCase):
         actual_id = id(actual)
         self.assertEqual(expected_id, actual_id)
 
+    def test_sub_Point2D_from_Vector2D(self):
+        expected = "can only subtract a Vector from a Vector"
+        p0 = Point2D(1, 2)
+        v0 = Vector2D(4, 3)
+        with self.assertRaises(TypeError) as e:
+            _ = v0 - p0
+        self.assertEqual(expected, str(e.exception))
+
 
 if __name__ == '__main__':
     unittest.main()
