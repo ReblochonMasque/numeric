@@ -331,6 +331,14 @@ class TestPointVectorInteraction(unittest.TestCase):
         expected = "Can only mutate a Vector via addition with a Vector"
         self.assertEqual(expected, str(e.exception))
 
+    def test_iadd_Point_w_Vector(self):
+        """test Vector += Point"""
+        expected = Point(-2, 1, 0, 3)
+        actual = Point(4, 6, 0, 1)
+        v = Vector(-6, -5, 0, 2)
+        actual += v
+        self.assertEqual(expected, actual)
+
 
 class TestPoint2DVector2DInteraction(unittest.TestCase):
 
