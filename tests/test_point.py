@@ -166,9 +166,14 @@ class TestPoint(unittest.TestCase):
         actual_vector = p0 - p1
         self.assertEqual(expected_vector, actual_vector)
 
-    # def test_sub_mismatched_sizes_of_operands(self):
-    #     pass
-    #
+    def test_sub_mismatched_sizes_of_operands(self):
+        expected = "mismatched sizes of operands"
+        p0 = Point(7, 8, 0, 2)
+        p1 = Point(7, 6, 3, -2, 1)
+        with self.assertRaises(ValueError) as e:
+            _ = p0 - p1
+        self.assertEqual(expected, str(e.exception))
+
     # def test_sub_Vector_from_Point(self):
     #     # Point
     #     pass
