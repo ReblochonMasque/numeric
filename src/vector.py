@@ -7,7 +7,7 @@ classes to represent Point and Vector
 import math
 
 from abc import ABC
-from typing import Iterable, Iterator, List, Union
+from typing import Iterator, Union
 
 
 Scalar = Union[int, float]
