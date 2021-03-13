@@ -202,6 +202,9 @@ class TestVector2D(unittest.TestCase):
     def test_instance_1(self):
         self.assertIsInstance(Vector2D(x=2.2, y=-3.7), Vector2D)
 
+    def test_len(self):
+        self.assertEqual(len(Vector2D(1, 2)), 2)
+
     def test_iter_0(self):
         expecteds = (3.2, 7.3)
         actuals = Vector2D(3.2, 7.3)
