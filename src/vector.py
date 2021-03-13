@@ -166,8 +166,7 @@ class Vector(AbstractPointVector):
         :param factor: a Scalar
         :return: mutated self
         """
-        self.x, self.y = self.x * factor, self.y * factor
-        self._coords = [self.x, self.y]
+        self._coords = [coord * factor for coord in self]
         return self
 
 
