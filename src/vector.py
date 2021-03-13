@@ -174,14 +174,6 @@ class Vector2D(Vector):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    # def __rmul__(self, factor: Scalar) -> 'Vector2D':
-    #     """returns a new Vector2D equal to self scaled by scalar
-    #
-    #     :param factor: a Scalar
-    #     :return: new Vector2D equal to self scaled by scalar
-    #     """
-    #     return self * factor
-
     def __imul__(self, factor: Scalar) -> 'Vector2D':
         """returns self scaled by scalar
 
