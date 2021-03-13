@@ -142,7 +142,7 @@ class Vector(AbstractPointVector):
 
         :return: a new Vector2D, negative of self
         """
-        return self.__class__(-coord for coord in self)
+        return self.__class__(*(-coord for coord in self))
 
 
 class Vector2D(Vector):
