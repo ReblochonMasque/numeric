@@ -84,6 +84,8 @@ class AbstractPointVector(ABC):
         :param other: Vector
         :return: mutated Point self
         """
+        if len(self) != len(other):
+            raise ValueError("mismatched sizes of operands")
         if not isinstance(other, Vector):
             # Point += Point does not make sense
             # Vector += Point does not make sense
