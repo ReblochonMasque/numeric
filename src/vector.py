@@ -90,7 +90,7 @@ class AbstractPointVector(ABC):
             # Point += Point does not make sense
             # Vector += Point does not make sense
             raise TypeError("Can only mutate a Point or Vector via addition with a Vector")
-        for idx, coord in enumerate(other._coords):
+        for idx, coord in enumerate(other):
             self._coords[idx] += coord
         return self
 
@@ -106,7 +106,7 @@ class AbstractPointVector(ABC):
             # Vector -= Point does not make sense
             # Point -= Point does not make sense
             raise TypeError("Can only mutate a Vector or a Point by subtracting a Vector")
-        for idx, coord in enumerate(other._coords):
+        for idx, coord in enumerate(other):
             self._coords[idx] -= coord
         return self
 
