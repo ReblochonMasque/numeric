@@ -502,6 +502,14 @@ class TestPoint2DVector2DInteraction(unittest.TestCase):
         self.assertEqual(expected, actual)
         self.assertIsInstance(actual, Point2D)
 
+    def test_sub_tuple_from_Vector2D(self):
+        expected = "Can only subtract a Point or a Vector from a Point"
+        p0 = Point(7, 2)
+        p1 = (7, 6)
+        with self.assertRaises(TypeError) as e:
+            _ = p0 - p1
+        self.assertEqual(expected, str(e.exception))
+
 
 if __name__ == '__main__':
     unittest.main()
