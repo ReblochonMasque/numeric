@@ -411,10 +411,14 @@ class TestPointVectorInteraction(unittest.TestCase):
             _ = p0 - p1
         self.assertEqual(expected, str(e.exception))
 
-    # def test_sub_Vector_from_Point(self):
-    #     # Point
-    #     pass
-    #
+    def test_sub_Vector_from_Point(self):
+        """Point - Vector = Point"""
+        expected = Point(7, 4, 3, -5)
+        p0 = Point(0, 0, 0, 0)
+        v0 = Vector(-7, -4, -3, 5)
+        actual = p0 - v0
+        self.assertEqual(expected, actual)
+
     # def test_sub_Point_from_Vector(self):
     #     # TypeError
     #     pass
