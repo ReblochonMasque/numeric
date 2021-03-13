@@ -127,16 +127,6 @@ class Vector2D(Vector):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    # def __sub__(self, other: 'Vector2D') -> 'Vector2D':
-    #     """returns a new Vector2D sub of self and other
-    #
-    #     :param other: Vector2D
-    #     :return: new Vector2D sub of self and other
-    #     """
-    #     if not isinstance(other, Vector2D):
-    #         raise TypeError
-    #     return Vector2D(self.x - other.x, self.y - other.y)
-
     def __isub__(self, other: 'Vector2D') -> 'Vector2D':
         """subs other from self and returns it
 
