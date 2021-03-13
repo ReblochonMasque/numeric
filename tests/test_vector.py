@@ -277,6 +277,12 @@ class TestVector(unittest.TestCase):
         self.assertEqual(expected, actual)
         self.assertEqual(expected_id, actual_id)
 
+    def test_imul_1(self):
+        expected = Vector(-2, -4, -6, -7)
+        actual = Vector(1, 2, 3, 3.5)
+        actual *= -2
+        self.assertEqual(expected, actual)
+
 
 class TestVector2D(unittest.TestCase):
 
