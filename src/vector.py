@@ -291,6 +291,32 @@ class Point(AbstractPointVector):
             raise ValueError("Incompatible operands sizes")
         return self.__class__(*(self_c + other_c for self_c, other_c in zip(self, other)))
 
+    def __iadd__(self, other: 'Vector') -> 'Point':
+        """adds Vector other to self and returns self, mutated
+
+        :param other: Vector
+        :return: mutated Point self
+        """
+        if not isinstance(other, Vector):
+            # Point += Point does not make sense
+            raise TypeError("Can only mutate a Point via addition with a Vector")
+        for idx, coord in enumerate(other._coords):
+            self._coords[idx] += coord
+        return self
+
+    # def __iadd__(self, other: 'Vector2D') -> 'Point2D':
+    #     """adds other to self and returns self
+    #
+    #     :param other: Vector2D
+    #     :return: self
+    #     """
+    #     # if other.__class__.__name__ != 'Vector2D':
+    #     if not isinstance(other, Vector2D):
+    #         raise TypeError
+    #     self.x, self.y = self.x + other.x, self.y + other.y
+    #     self._coords = [self.x, self.y]
+    #     return self
+
 
 class Point2D(Point):
 
@@ -305,18 +331,18 @@ class Point2D(Point):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    def __iadd__(self, other: 'Vector2D') -> 'Point2D':
-        """adds other to self and returns self
-
-        :param other: Vector2D
-        :return: self
-        """
-        # if other.__class__.__name__ != 'Vector2D':
-        if not isinstance(other, Vector2D):
-            raise TypeError
-        self.x, self.y = self.x + other.x, self.y + other.y
-        self._coords = [self.x, self.y]
-        return self
+    # def __iadd__(self, other: 'Vector2D') -> 'Point2D':
+    #     """adds other to self and returns self
+    #
+    #     :param other: Vector2D
+    #     :return: self
+    #     """
+    #     # if other.__class__.__name__ != 'Vector2D':
+    #     if not isinstance(other, Vector2D):
+    #         raise TypeError
+    #     self.x, self.y = self.x + other.x, self.y + other.y
+    #     self._coords = [self.x, self.y]
+    #     return self
 
     def __sub__(self, other: Union['Point2D', 'Vector2D']) -> Union['Point2D', 'Vector2D']:
         """returns a new Vector2D sum of self and other
