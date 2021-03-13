@@ -27,6 +27,9 @@ class TestVector(unittest.TestCase):
         values = (1, 2)
         self.assertIsInstance(Vector(*values), Vector)
 
+    def test_len(self):
+        self.assertEqual(len(Vector(1, 2, 3, 4, 5, 6)), 6)
+
     def test_iter_0(self):
         expecteds = (3.2, 7.3, 8.987, -79.1)
         actuals = Vector(3.2, 7.3, 8.987, -79.1)
