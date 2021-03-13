@@ -223,6 +223,11 @@ class TestVector(unittest.TestCase):
             v0 -= v1
         self.assertEqual(expected, str(e.exception))
 
+    def test_neg(self):
+        expected = Vector(-7, -3, 12, -9)
+        actual = -Vector(7, 3, -12, 9)
+        self.assertEqual(expected, actual)
+
 
 class TestVector2D(unittest.TestCase):
 
@@ -388,8 +393,8 @@ class TestVector2D(unittest.TestCase):
         self.assertEqual(expected_id, actual_id)
 
     def test_neg(self):
-        expected = Vector(-7, -3, 12, -9)
-        actual = -Vector(7, 3, -12, 9)
+        expected = Vector2D(2, -9)
+        actual = -Vector2D(-2, 9)
         self.assertEqual(expected, actual)
 
     def test_mul_1(self):
