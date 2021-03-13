@@ -177,6 +177,12 @@ class TestPoint(unittest.TestCase):
             _ = p0 - p1
         self.assertEqual(expected, str(e.exception))
 
+    def test_isub(self):
+        expected = Point(8, -3, -2, 38)
+        actual = Point(2, 1, -1, 40)
+        actual -= Vector(-6, 4, 1, 2)
+        self.assertEqual(expected, actual)
+
 
 class TestPoint2D(unittest.TestCase):
 
