@@ -292,6 +292,22 @@ class Point(AbstractPointVector):
             self._coords[idx] += coord
         return self
 
+    def __sub__(self, other: Union['Point', 'Vector']) -> Union['Point', 'Vector']:
+        """calculates and returns the result of the subtraction of other from self
+
+        @todo refactor type determination if possible - maybe extract function?
+
+        :param other: a 'Point' or a 'Vector'
+        :return: a new 'Point' if other is a Vector
+                 a new 'Vector' if other is a Point
+        """
+        if isinstance(other, Vector):
+            return self.__class__(*(self_c - other_c for self_c, other_c in zip(self, other)))
+        if isinstance(other, Point):
+            tpe = Vector if len(self._coords) > 2 else Vector2D
+            return tpe(*(self_c - other_c for self_c, other_c in zip(self, other)))
+        raise TypeError("Can only subtract a Point or a Vector from a Point")
+
 
 class Point2D(Point):
 
@@ -306,15 +322,15 @@ class Point2D(Point):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    def __sub__(self, other: Union['Point2D', 'Vector2D']) -> Union['Point2D', 'Vector2D']:
-        """returns a new Vector2D sum of self and other
-
-        :param other: Vector2D
-        :return: new Vector2D sum of self and other
-        """
-        if isinstance(other, Vector2D):
-            return Point2D(self.x - other.x, self.y - other.y)
-        return Vector2D(self.x - other.x, self.y - other.y)
+    # def __sub__(self, other: Union['Point2D', 'Vector2D']) -> Union['Point2D', 'Vector2D']:
+    #     """returns a new Vector2D sum of self and other
+    #
+    #     :param other: Vector2D
+    #     :return: new Vector2D sum of self and other
+    #     """
+    #     if isinstance(other, Vector2D):
+    #         return Point2D(self.x - other.x, self.y - other.y)
+    #     return Vector2D(self.x - other.x, self.y - other.y)
 
     def __isub__(self, other: 'Vector2D') -> 'Point2D':
         """subs other from self and returns self
