@@ -334,18 +334,6 @@ class Point2D(Point):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    # def __isub__(self, other: 'Vector2D') -> 'Point2D':
-    #     """subs other from self and returns self
-    #
-    #     :param other: Vector2D
-    #     :return: self
-    #     """
-    #     if not isinstance(other, Vector2D):
-    #         raise TypeError
-    #     self.x, self.y = self.x - other.x, self.y - other.y
-    #     self._coords = [self.x, self.y]
-    #     return self
-
     # POINT
     #
     # def distance_from_point(self, other: 'Point') -> Number:
