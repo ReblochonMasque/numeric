@@ -339,6 +339,15 @@ class TestPoint2DVector2DInteraction(unittest.TestCase):
         actual = v + p
         self.assertEqual(expected, actual)
 
+    def test_iadd_Vector2D_w_Point2D(self):
+        """test Vector += Point"""
+        p = Point2D(4, 6)
+        v = Vector2D(-6, -5)
+        with self.assertRaises(TypeError) as e:
+            v += p
+        expected = "Can only mutate a Vector via addition with a Vector"
+        self.assertEqual(expected, str(e.exception))
+
 
 if __name__ == '__main__':
     unittest.main()
