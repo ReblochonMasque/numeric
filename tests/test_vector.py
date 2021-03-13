@@ -402,7 +402,7 @@ class TestVector2D(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     def test_iadd_instance_mutated(self):
-        expected = Vector2D(-4, 5)
+        _ = Vector2D(-4, 5)
         actual = Vector2D(2, 1)
         expected_id = id(actual)
         actual += Vector2D(-6, 4)
