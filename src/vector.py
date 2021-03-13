@@ -21,6 +21,9 @@ class AbstractPointVector(ABC):
     def __init__(self, *coords: Scalar) -> None:
         self._coords = list(coords)
 
+    def __len__(self) -> int:
+        return len(self._coords)
+
     def __iter__(self) -> Iterator:
         for coord in self._coords:
             yield coord
