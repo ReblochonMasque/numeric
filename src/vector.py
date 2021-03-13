@@ -152,7 +152,7 @@ class Vector(AbstractPointVector):
         """
         return self.__class__(*(coord * scalar for coord in self))
 
-    def __rmul__(self, factor: Scalar) -> 'Vector2D':
+    def __rmul__(self, factor: Scalar) -> 'Vector':
         """returns a new Vector equal to self scaled by scalar
 
         :param factor: a Scalar
