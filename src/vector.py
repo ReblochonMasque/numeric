@@ -303,7 +303,8 @@ class Point(AbstractPointVector):
         :return: a new 'Point' if other is a Vector
                  a new 'Vector' if other is a Point
         """
-        assert len(self._coords) == len(other._coords), "mismatched sizes of operands"
+        if len(self._coords) != len(other._coords):
+            raise ValueError("mismatched sizes of operands")
         if isinstance(other, Vector):
             return self.__class__(*(self_c - other_c for self_c, other_c in zip(self, other)))
         if isinstance(other, Point):
