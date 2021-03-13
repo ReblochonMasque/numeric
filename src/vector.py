@@ -118,6 +118,19 @@ class Vector(AbstractPointVector):
             raise TypeError("can only subtract a Vector from a Vector")
         return self.__class__(*(self_c - other_c for self_c, other_c in zip(self, other)))
 
+    def __isub__(self, other: 'Vector') -> 'Vector':
+        """subtracts Vector other to self and returns self, mutated
+
+        :param other: Vector
+        :return: mutated Vector self
+        """
+        if not isinstance(other, Vector):
+            # Vector -= Point does not make sense
+            raise TypeError("Can only mutate a Vector via subtracting a Vector")
+        for idx, coord in enumerate(other._coords):
+            self._coords[idx] -= coord
+        return self
+
 
 class Vector2D(Vector):
 
@@ -132,17 +145,17 @@ class Vector2D(Vector):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    def __isub__(self, other: 'Vector2D') -> 'Vector2D':
-        """subs other from self and returns it
-
-        :param other: Vector2D
-        :return: mutated self
-        """
-        if not isinstance(other, Vector2D):
-            raise TypeError
-        self.x, self.y = self.x - other.x, self.y - other.y
-        self._coords = [self.x, self.y]
-        return self
+    # def __isub__(self, other: 'Vector2D') -> 'Vector2D':
+    #     """subs other from self and returns it
+    #
+    #     :param other: Vector2D
+    #     :return: mutated self
+    #     """
+    #     if not isinstance(other, Vector2D):
+    #         raise TypeError
+    #     self.x, self.y = self.x - other.x, self.y - other.y
+    #     self._coords = [self.x, self.y]
+    #     return self
 
     def __neg__(self) -> 'Vector2D':
         """creates a new Vector2D, negative of self, and returns it
