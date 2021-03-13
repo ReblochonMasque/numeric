@@ -97,6 +97,7 @@ class Vector(AbstractPointVector):
         :return: mutated Vector self
         """
         if not isinstance(other, Vector):
+            # Vector += Point does not make sense
             raise TypeError("Can only mutate a Vector via addition with a Vector")
         for idx, coord in enumerate(other._coords):
             self._coords[idx] += coord
