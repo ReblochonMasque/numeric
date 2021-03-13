@@ -562,6 +562,16 @@ class TestPoint2DVector2DInteraction(unittest.TestCase):
             _ = p0 - p1
         self.assertEqual(expected, str(e.exception))
 
+    def test_isub_sub_Point2D_from_Vector2D(self):
+        # Vector -= Point does not make sense
+        expected = "Can only mutate a Vector or a Point by subtracting a Vector"
+        v0 = Vector2D(-1, -4)
+        p0 = Point2D(1, 4)
+        with self.assertRaises(TypeError) as e:
+            v0 -= p0
+        self.assertEqual(expected, str(e.exception))
+
+
 
 if __name__ == '__main__':
     unittest.main()
