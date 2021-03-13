@@ -228,7 +228,7 @@ class TestVector(unittest.TestCase):
         actual = -Vector(7, 3, -12, 9)
         self.assertEqual(expected, actual)
 
-    def test_mul_1(self):
+    def test_mul_0(self):
         actual = Vector(1, 2, 3, 4) * 2
         expected = Vector(2, 4, 6, 8)
         self.assertEqual(expected, actual)
@@ -402,27 +402,27 @@ class TestVector2D(unittest.TestCase):
         actual = -Vector2D(-2, 9)
         self.assertEqual(expected, actual)
 
-    def test_mul_1(self):
+    def test_mul_0(self):
         actual = Vector2D(1, 2) * 2
         expected = Vector2D(2, 4)
         self.assertEqual(expected, actual)
 
-    def test_mul_2(self):
+    def test_mul_1(self):
         actual = Vector2D(-1, -2) * 2
         expected = Vector2D(-2, -4)
         self.assertEqual(expected, actual)
 
-    def test_rmul_1(self):
+    def test_rmul_0(self):
         actual = 2 * Vector2D(1, 2)
         expected = Vector2D(2, 4)
         self.assertEqual(expected, actual)
 
-    def test_rmul_2(self):
+    def test_rmul_1(self):
         actual = -2 * Vector2D(1, -2)
         expected = Vector2D(-2, 4)
         self.assertEqual(expected, actual)
 
-    def test_imul_1(self):
+    def test_imul_0(self):
         expected = Vector2D(2, 4)
         actual = Vector2D(1, 2)
         expected_id = id(actual)
@@ -431,13 +431,13 @@ class TestVector2D(unittest.TestCase):
         self.assertEqual(expected, actual)
         self.assertEqual(expected_id, actual_id)
 
-    def test_imul_2(self):
+    def test_imul_1(self):
         expected = Vector2D(-2, -4)
         actual = Vector2D(-1, -2)
         actual *= 2
         self.assertEqual(expected, actual)
 
-    def test_imul_mutation_1(self):
+    def test_imul_mutation_0(self):
         expected = Vector2D(-2, -4)
         actual = Vector2D(1, 2)
         expected_id = id(actual)
@@ -446,7 +446,7 @@ class TestVector2D(unittest.TestCase):
         self.assertEqual(expected, actual)
         self.assertEqual(expected_id, actual_id)
 
-    def test_imul_mutation_2(self):
+    def test_imul_mutation_1(self):
         expected = Vector2D(-2, -4)
         actual = Vector2D(-1, -2)
         expected_id = id(actual)
