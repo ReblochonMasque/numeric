@@ -157,13 +157,6 @@ class Vector2D(Vector):
 
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
-    #
-    # def __neg__(self) -> 'Vector2D':
-    #     """creates a new Vector2D, negative of self, and returns it
-    #
-    #     :return: a new Vector2D, negative of self
-    #     """
-    #     return self.__class__(-self.x, -self.y)
 
     def __mul__(self, scalar: float) -> 'Vector2D':
         """returns a new Vector2D equal to self scaled by scalar
