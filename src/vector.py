@@ -34,7 +34,7 @@ class AbstractPointVector(ABC):
         :return: bool, True if self and other are equal, False otherwise
         """
         assert other is not None
-        if not isinstance(other, type(self)) or len(self._coords) != len(other._coords):
+        if not isinstance(other, type(self)) or len(self) != len(other):
             return False
         for self_c, other_c in zip(self, other):
             if not math.isclose(self_c, other_c, abs_tol=self.EPSILON):
@@ -112,7 +112,7 @@ class Vector(AbstractPointVector):
         :param other: Vector
         :return: new Vector subtraction of other from self
         """
-        if len(self._coords) != len(other._coords):
+        if len(self) != len(other):
             raise ValueError("mismatched sizes of operands")
         if not isinstance(other, Vector):
             raise TypeError("can only subtract a Vector from a Vector")
@@ -280,7 +280,7 @@ class Point(AbstractPointVector):
             raise TypeError("cannot add two Point")
         elif not isinstance(other, Vector):
             raise NotImplementedError(f'addition of Point with {type(other)} is not implemented')
-        if len(self._coords) != len(other._coords):
+        if len(self) != len(other):
             raise ValueError("Incompatible operands sizes")
         return self.__class__(*(self_c + other_c for self_c, other_c in zip(self, other)))
 
@@ -312,7 +312,7 @@ class Point(AbstractPointVector):
         if isinstance(other, Vector):
             return self.__class__(*(self_c - other_c for self_c, other_c in zip(self, other)))
         if isinstance(other, Point):
-            tpe = Vector if len(self._coords) > 2 else Vector2D
+            tpe = Vector if len(self) > 2 else Vector2D
             return tpe(*(self_c - other_c for self_c, other_c in zip(self, other)))
         raise TypeError("Can only subtract a Point or a Vector from a Point")
 
