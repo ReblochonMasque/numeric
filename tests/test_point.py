@@ -341,6 +341,12 @@ class TestPoint2D(unittest.TestCase):
         self.assertEqual(expected_vector, actual_vector)
         self.assertIsInstance(actual_vector, Vector2D)
 
+    def test_isub(self):
+        expected = Point2D(8, -3)
+        actual = Point2D(2, 1)
+        actual -= Vector2D(-6, 4)
+        self.assertEqual(expected, actual)
+
 
 class TestPointVectorInteraction(unittest.TestCase):
 
