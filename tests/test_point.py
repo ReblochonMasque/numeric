@@ -419,10 +419,13 @@ class TestPointVectorInteraction(unittest.TestCase):
         actual = p0 - v0
         self.assertEqual(expected, actual)
 
-    # def test_sub_Point_from_Vector(self):
-    #     # TypeError
-    #     pass
-
+    def test_sub_tuple_from_Vector(self):
+        expected = "Can only subtract a Point or a Vector from a Point"
+        p0 = Point(7, 8, 0, 2)
+        p1 = (7, 6, 3, -2)
+        with self.assertRaises(TypeError) as e:
+            _ = p0 - p1
+        self.assertEqual(expected, str(e.exception))
 
 class TestPoint2DVector2DInteraction(unittest.TestCase):
 
