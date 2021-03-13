@@ -287,6 +287,12 @@ class TestVector2D(unittest.TestCase):
         actual = Vector2D(1, 0) + Vector2D(0, 1)
         self.assertIsInstance(actual, Vector2D)
 
+    def test_iadd(self):
+        expected = Vector2D(-4, 5)
+        actual = Vector2D(2, 1)
+        actual += Vector2D(-6, 4)
+        self.assertEqual(expected, actual)
+
     def test_mul_1(self):
         actual = Vector2D(1, 2) * 2
         expected = Vector2D(2, 4)
