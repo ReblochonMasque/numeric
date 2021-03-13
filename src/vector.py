@@ -78,6 +78,19 @@ class AbstractPointVector(ABC):
         """
         return self.__class__(*self._coords)
 
+    def __iadd__(self, other: 'Vector') -> 'Point':
+        """adds Vector other to self and returns self, mutated
+
+        :param other: Vector
+        :return: mutated Point self
+        """
+        if not isinstance(other, Vector):
+            # Point += Point does not make sense
+            raise TypeError("Can only mutate a Point or Vector via addition with a Vector")
+        for idx, coord in enumerate(other._coords):
+            self._coords[idx] += coord
+        return self
+
     def __isub__(self, other: 'Vector') -> Union['Point', 'Vector']:
         """subtracts Vector other to self and returns self, mutated
 
@@ -109,18 +122,18 @@ class Vector(AbstractPointVector):
         # Vector + Vector = Vector
         return self.__class__(*(self_c + other_c for self_c, other_c in zip(self, other)))
 
-    def __iadd__(self, other: 'Vector') -> 'Vector':
-        """adds Vector other to self and returns self, mutated
-
-        :param other: Vector
-        :return: mutated Vector self
-        """
-        if not isinstance(other, Vector):
-            # Vector += Point does not make sense
-            raise TypeError("Can only mutate a Vector via addition with a Vector")
-        for idx, coord in enumerate(other._coords):
-            self._coords[idx] += coord
-        return self
+    # def __iadd__(self, other: 'Vector') -> 'Vector':
+    #     """adds Vector other to self and returns self, mutated
+    #
+    #     :param other: Vector
+    #     :return: mutated Vector self
+    #     """
+    #     if not isinstance(other, Vector):
+    #         # Vector += Point does not make sense
+    #         raise TypeError("Can only mutate a Vector via addition with a Vector")
+    #     for idx, coord in enumerate(other._coords):
+    #         self._coords[idx] += coord
+    #     return self
 
     def __sub__(self, other: 'Vector') -> 'Vector':
         """returns a new Vector the subtraction of other from self
@@ -288,18 +301,18 @@ class Point(AbstractPointVector):
             raise ValueError("Incompatible operands sizes")
         return self.__class__(*(self_c + other_c for self_c, other_c in zip(self, other)))
 
-    def __iadd__(self, other: 'Vector') -> 'Point':
-        """adds Vector other to self and returns self, mutated
-
-        :param other: Vector
-        :return: mutated Point self
-        """
-        if not isinstance(other, Vector):
-            # Point += Point does not make sense
-            raise TypeError("Can only mutate a Point via addition with a Vector")
-        for idx, coord in enumerate(other._coords):
-            self._coords[idx] += coord
-        return self
+    # def __iadd__(self, other: 'Vector') -> 'Point':
+    #     """adds Vector other to self and returns self, mutated
+    #
+    #     :param other: Vector
+    #     :return: mutated Point self
+    #     """
+    #     if not isinstance(other, Vector):
+    #         # Point += Point does not make sense
+    #         raise TypeError("Can only mutate a Point via addition with a Vector")
+    #     for idx, coord in enumerate(other._coords):
+    #         self._coords[idx] += coord
+    #     return self
 
     def __sub__(self, other: Union['Point', 'Vector']) -> Union['Point', 'Vector']:
         """calculates and returns the result of the subtraction of other from self
