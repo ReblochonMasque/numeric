@@ -467,6 +467,11 @@ class TestVector2D(unittest.TestCase):
         expected = Vector2D(-2, 4)
         self.assertEqual(expected, actual)
 
+    def test_rmul_2(self):
+        actual = 0 * Vector2D(-1, -2)
+        expected = Vector2D()
+        self.assertEqual(expected, actual)
+
     def test_imul_0(self):
         expected = Vector2D(2, 4)
         actual = Vector2D(1, 2)
