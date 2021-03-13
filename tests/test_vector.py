@@ -182,6 +182,14 @@ class TestVector(unittest.TestCase):
         actual = v0 - v1
         self.assertEqual(expected, actual)
 
+    def test_sub_mismatched_sizes_of_operands(self):
+        expected = "mismatched sizes of operands"
+        v0 = Vector(7, 8, 0, 2, 1)
+        v1 = Vector(7, 6, 3, -2)
+        with self.assertRaises(ValueError) as e:
+            _ = v0 - v1
+        self.assertEqual(expected, str(e.exception))
+
 
 class TestVector2D(unittest.TestCase):
 
