@@ -174,14 +174,6 @@ class TestPoint(unittest.TestCase):
             _ = p0 - p1
         self.assertEqual(expected, str(e.exception))
 
-    # def test_sub_Vector_from_Point(self):
-    #     # Point
-    #     pass
-    #
-    # def test_sub_Point_from_Vector(self):
-    #     # TypeError
-    #     pass
-
 
 class TestPoint2D(unittest.TestCase):
 
@@ -418,6 +410,14 @@ class TestPointVectorInteraction(unittest.TestCase):
         with self.assertRaises(ValueError) as e:
             _ = p0 - p1
         self.assertEqual(expected, str(e.exception))
+
+    # def test_sub_Vector_from_Point(self):
+    #     # Point
+    #     pass
+    #
+    # def test_sub_Point_from_Vector(self):
+    #     # TypeError
+    #     pass
 
 
 class TestPoint2DVector2DInteraction(unittest.TestCase):
