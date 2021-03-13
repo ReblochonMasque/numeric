@@ -28,6 +28,9 @@ class TestPoint(unittest.TestCase):
         values = (1, 2)
         self.assertIsInstance(Point(*values), Point)
 
+    def test_len(self):
+        self.assertEqual(len(Point(1, 2, 3, 4, 5, 6)), 6)
+
     def test_iter_0(self):
         expecteds = (3.2, 7.3, 8.987, -79.1)
         actuals = Point(3.2, 7.3, 8.987, -79.1)
