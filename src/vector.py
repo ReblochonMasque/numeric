@@ -330,16 +330,6 @@ class Point2D(Point):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    # def __sub__(self, other: Union['Point2D', 'Vector2D']) -> Union['Point2D', 'Vector2D']:
-    #     """returns a new Vector2D sum of self and other
-    #
-    #     :param other: Vector2D
-    #     :return: new Vector2D sum of self and other
-    #     """
-    #     if isinstance(other, Vector2D):
-    #         return Point2D(self.x - other.x, self.y - other.y)
-    #     return Vector2D(self.x - other.x, self.y - other.y)
-
     def __isub__(self, other: 'Vector2D') -> 'Point2D':
         """subs other from self and returns self
 
