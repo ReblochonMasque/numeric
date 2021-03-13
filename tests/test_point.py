@@ -159,6 +159,24 @@ class TestPoint(unittest.TestCase):
         expected = "Can only mutate a Point via addition with a Vector"
         self.assertEqual(expected, str(e.exception))
 
+    # def test_sub_Point_from_Point(self):
+    #     expected = Vector(0, 2, -3, 4)
+    #     v0 = Vector(7, 8, 0, 2)
+    #     v1 = Vector(7, 6, 3, -2)
+    #     actual = v0 - v1
+    #     self.assertEqual(expected, actual)
+    #
+    # def test_sub_mismatched_sizes_of_operands(self):
+    #     pass
+    #
+    # def test_sub_Vector_from_Point(self):
+    #     # Point
+    #     pass
+    #
+    # def test_sub_Point_from_Vector(self):
+    #     # TypeError
+    #     pass
+
 
 class TestPoint2D(unittest.TestCase):
 
