@@ -162,6 +162,14 @@ class TestPoint(unittest.TestCase):
         expected = "Can only mutate a Point or Vector via addition with a Vector"
         self.assertEqual(expected, str(e.exception))
 
+    def test_iadd_mismatched_sizes_of_operands(self):
+        expected = "mismatched sizes of operands"
+        p0 = Point(7, 8, 0, 2, 1)
+        p1 = Point(7, 6, 3, -2)
+        with self.assertRaises(ValueError) as e:
+            p0 += p1
+        self.assertEqual(expected, str(e.exception))
+
     def test_sub_Point_from_Point(self):
         expected_vector = Vector(0, 2, -3, 4)
         p0 = Point(7, 8, 0, 2)
