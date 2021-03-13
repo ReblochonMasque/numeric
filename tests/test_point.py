@@ -183,6 +183,14 @@ class TestPoint(unittest.TestCase):
         actual -= Vector(-6, 4, 1, 2)
         self.assertEqual(expected, actual)
 
+    def test_isub_instance_mutated(self):
+        _ = Point(8, -3, -2, 38)
+        actual = Point(2, 1, -1, 40)
+        expected_id = id(actual)
+        actual -= Vector(-6, 4, 1, 2)
+        actual_id = id(actual)
+        self.assertEqual(expected_id, actual_id)
+
 
 class TestPoint2D(unittest.TestCase):
 
