@@ -255,14 +255,6 @@ class Vector2D(Vector):
         mag = abs(self)
         return self.__class__(self.x / mag, self.y / mag)
 
-    # def __abs__(self) -> Scalar:
-    #     """calculates and returns the magnitude of self
-    #
-    #     :return: Scalar equal to the magnitude of self
-    #     """
-    #     return math.hypot(self.x, self.y)
-    # mag = __abs__
-
     def perp(self) -> 'Vector2D':
         """2D Perp Operator
 
