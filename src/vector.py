@@ -239,18 +239,6 @@ class Vector2D(Vector):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    # def __ifloordiv__(self, divisor: Scalar) -> 'Vector2D':
-    #     """returns self floor divided by divisor
-    #
-    #     :param divisor: a Scalar
-    #     :return: mutated self
-    #     """
-    #     if divisor == 0:
-    #         raise ValueError
-    #     self.x, self.y = self.x // divisor, self.y // divisor
-    #     self._coords = [self.x, self.y]
-    #     return self
-
     def unit(self) -> 'Vector2D':
         """calculates and returns the unique unit vector in the direction of self
 
