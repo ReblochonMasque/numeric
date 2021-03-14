@@ -689,6 +689,16 @@ class TestVector2D(unittest.TestCase):
             a //= 0
         self.assertEqual(expected, str(e.exception))
 
+    def test_unit_vector_0(self):
+        actual = Vector2D(0, -1).unit()
+        expected = Vector2D(0, -1)
+        self.assertEqual(expected, actual)
+
+    def test_unit_vector_1(self):
+        actual = Vector2D(x=3.00, y=4.00).unit()
+        expected = Vector2D(x=0.60, y=0.80)
+        self.assertEqual(expected, actual)
+
     def test_dot_1(self):
         actual = Vector2D(1, 0).dot(Vector2D(0, 1))
         expected = 0
@@ -717,16 +727,6 @@ class TestVector2D(unittest.TestCase):
     def test_dot_6(self):
         actual = Vector2D(-1, 1).dot(Vector2D(1, -1))
         expected = -2
-        self.assertEqual(expected, actual)
-
-    def test_unit_vector_0(self):
-        actual = Vector2D(0, -1).unit()
-        expected = Vector2D(0, -1)
-        self.assertEqual(expected, actual)
-
-    def test_unit_vector_1(self):
-        actual = Vector2D(x=3.00, y=4.00).unit()
-        expected = Vector2D(x=0.60, y=0.80)
         self.assertEqual(expected, actual)
 
     def test_perp_0(self):
