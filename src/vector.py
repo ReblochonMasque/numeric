@@ -113,6 +113,14 @@ class AbstractPointVector(ABC):
 
 class Vector(AbstractPointVector):
 
+    def __abs__(self) -> Scalar:
+        """calculates and returns the magnitude of self
+
+        :return: Scalar equal to the magnitude of self
+        """
+        return math.hypot(*self._coords)
+    mag = __abs__
+
     def __add__(self, other: 'AbstractPointVector') -> 'AbstractPointVector':
         """returns a new Vector sum of self and other
 
@@ -210,14 +218,6 @@ class Vector(AbstractPointVector):
             raise ZeroDivisionError("cannot divide a Vector by zero")
         self._coords = [coord // divisor for coord in self]
         return self
-
-    def __abs__(self) -> Scalar:
-        """calculates and returns the magnitude of self
-
-        :return: Scalar equal to the magnitude of self
-        """
-        return math.hypot(*self._coords)
-    mag = __abs__
 
 
 class Vector2D(Vector):
