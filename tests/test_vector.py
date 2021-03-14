@@ -440,6 +440,21 @@ class TestVector2D(unittest.TestCase):
     def test_bool_3(self):
         self.assertTrue(Vector2D(0, -2))
 
+    def test_abs_0(self):
+        expected = math.sqrt(17)
+        actual = abs(Vector2D(-1, 4))
+        self.assertEqual(expected, actual)
+
+    def test_mag_0(self):
+        expected = math.sqrt(17)
+        actual = Vector2D(-1, 4).mag()
+        self.assertEqual(expected, actual)
+
+    def test_mag_1(self):
+        expected = 0
+        actual = Vector2D().mag()
+        self.assertEqual(expected, actual)
+
     def test_str_0(self):
         expected = 'Vector2D(x=0.00, y=0.00)\n'
         actual = StringIO()
@@ -673,21 +688,6 @@ class TestVector2D(unittest.TestCase):
             a = Vector2D(-1, 4)
             a //= 0
         self.assertEqual(expected, str(e.exception))
-
-    def test_abs_0(self):
-        expected = math.sqrt(17)
-        actual = abs(Vector2D(-1, 4))
-        self.assertEqual(expected, actual)
-
-    def test_mag_0(self):
-        expected = math.sqrt(17)
-        actual = Vector2D(-1, 4).mag()
-        self.assertEqual(expected, actual)
-
-    def test_mag_1(self):
-        expected = 0
-        actual = Vector2D().mag()
-        self.assertEqual(expected, actual)
 
     def test_dot_1(self):
         actual = Vector2D(1, 0).dot(Vector2D(0, 1))
