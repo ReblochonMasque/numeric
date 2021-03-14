@@ -190,6 +190,16 @@ class Vector(AbstractPointVector):
         self._coords = [coord / divisor for coord in self]
         return self
 
+    def __floordiv__(self, divisor: Scalar) -> 'Vector':
+        """returns a new Vector equal to self floor scaled by divisor
+
+        :param divisor: a Scalar
+        :return: new Vector2D equal to self floor divided by divisor
+        """
+        if divisor == 0:
+            raise ValueError("cannot divide a Vector by zero")
+        return self.__class__(*(coord // divisor for coord in self))
+
 
 class Vector2D(Vector):
 
@@ -218,15 +228,15 @@ class Vector2D(Vector):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    def __floordiv__(self, divisor: Scalar) -> 'Vector2D':
-        """returns a new Vector2D equal to self floor scaled by divisor
-
-        :param divisor: a Scalar
-        :return: new Vector2D equal to self floor divided by divisor
-        """
-        if divisor == 0:
-            raise ValueError
-        return Vector2D(self.x // divisor, self.y // divisor)
+    # def __floordiv__(self, divisor: Scalar) -> 'Vector2D':
+    #     """returns a new Vector2D equal to self floor scaled by divisor
+    #
+    #     :param divisor: a Scalar
+    #     :return: new Vector2D equal to self floor divided by divisor
+    #     """
+    #     if divisor == 0:
+    #         raise ValueError
+    #     return Vector2D(self.x // divisor, self.y // divisor)
 
     def __ifloordiv__(self, divisor: Scalar) -> 'Vector2D':
         """returns self floor divided by divisor
