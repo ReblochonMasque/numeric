@@ -346,6 +346,13 @@ class TestVector(unittest.TestCase):
         actual_id = id(actual)
         self.assertEqual(expected_id, actual_id)
 
+    def test_ifloordiv_2(self):
+        expected = "cannot divide a Vector by zero"
+        with self.assertRaises(ZeroDivisionError) as e:
+            a = Vector(-1, 4, -7/3, -21)
+            a //= 0
+        self.assertEqual(expected, str(e.exception))
+
 
 class TestVector2D(unittest.TestCase):
 
