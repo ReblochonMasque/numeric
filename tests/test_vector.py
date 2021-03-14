@@ -615,10 +615,14 @@ class TestVector2D(unittest.TestCase):
     def test_ifloordiv_0(self):
         expected = Vector2D(-1.//3., 4.//3.)
         actual = Vector2D(-1, 4)
+        actual //= 3
+        self.assertEqual(expected, actual)
+
+    def test_ifloordiv_1(self):
+        actual = Vector2D(-1, 4)
         expected_id = id(actual)
         actual //= 3
         actual_id = id(actual)
-        self.assertEqual(expected, actual)
         self.assertEqual(expected_id, actual_id)
 
     def test_dot_1(self):
