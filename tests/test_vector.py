@@ -309,6 +309,13 @@ class TestVector(unittest.TestCase):
         actual /= -3
         self.assertEqual(expected, actual)
 
+    def test_itruediv_1(self):
+        actual = Vector(-1, 4, -7/3, -21)
+        expected_id = id(actual)
+        actual /= 3
+        actual_id = id(actual)
+        self.assertEqual(expected_id, actual_id)
+
 
 class TestVector2D(unittest.TestCase):
 
