@@ -89,6 +89,21 @@ class TestVector(unittest.TestCase):
         actual = hash(Vector(0, 1, 0, 1))
         self.assertNotEqual(notexpected, actual)
 
+    def test_abs_0(self):
+        expected = math.sqrt(70)
+        actual = abs(Vector(-1, 4, 2, -7))
+        self.assertEqual(expected, actual)
+
+    def test_mag_0(self):
+        expected = math.sqrt(70)
+        actual = Vector(-1, -4, 2, 7).mag()
+        self.assertEqual(expected, actual)
+
+    def test_mag_1(self):
+        expected = 0
+        actual = Vector(0, 0, 0, 0, 0, 0, 0).mag()
+        self.assertEqual(expected, actual)
+
     def test_str_0(self):
         expected = 'Vector(1.00, 2.01, 3.79, 4.10)\n'
         v = Vector(1.0001, 2.009, 3.78987, 4.1)
@@ -352,21 +367,6 @@ class TestVector(unittest.TestCase):
             a = Vector(-1, 4, -7/3, -21)
             a //= 0
         self.assertEqual(expected, str(e.exception))
-
-    def test_abs_0(self):
-        expected = math.sqrt(70)
-        actual = abs(Vector(-1, 4, 2, -7))
-        self.assertEqual(expected, actual)
-
-    def test_mag_0(self):
-        expected = math.sqrt(70)
-        actual = Vector(-1, -4, 2, 7).mag()
-        self.assertEqual(expected, actual)
-
-    def test_mag_1(self):
-        expected = 0
-        actual = Vector(0, 0, 0, 0, 0, 0, 0).mag()
-        self.assertEqual(expected, actual)
 
 
 class TestVector2D(unittest.TestCase):
