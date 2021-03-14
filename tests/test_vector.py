@@ -353,6 +353,11 @@ class TestVector(unittest.TestCase):
             a //= 0
         self.assertEqual(expected, str(e.exception))
 
+    def test_abs_0(self):
+        expected = math.sqrt(70)
+        actual = abs(Vector(-1, 4, 2, -7))
+        self.assertEqual(expected, actual)
+
 
 class TestVector2D(unittest.TestCase):
 
