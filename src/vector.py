@@ -211,6 +211,14 @@ class Vector(AbstractPointVector):
         self._coords = [coord // divisor for coord in self]
         return self
 
+    def __abs__(self) -> Scalar:
+        """calculates and returns the magnitude of self
+
+        :return: Scalar equal to the magnitude of self
+        """
+        return math.hypot(*self._coords)
+    mag = __abs__
+
 
 class Vector2D(Vector):
 
@@ -247,13 +255,13 @@ class Vector2D(Vector):
         mag = abs(self)
         return self.__class__(self.x / mag, self.y / mag)
 
-    def __abs__(self) -> Scalar:
-        """calculates and returns the magnitude of self
-
-        :return: Scalar equal to the magnitude of self
-        """
-        return math.hypot(self.x, self.y)
-    mag = __abs__
+    # def __abs__(self) -> Scalar:
+    #     """calculates and returns the magnitude of self
+    #
+    #     :return: Scalar equal to the magnitude of self
+    #     """
+    #     return math.hypot(self.x, self.y)
+    # mag = __abs__
 
     def perp(self) -> 'Vector2D':
         """2D Perp Operator
@@ -388,3 +396,5 @@ if __name__ == '__main__':
     v = Vector2D(x=1, y=2)
     v -= Vector2D(x=1, y=2)
     print(v, v._coords, v.x, v.y)
+
+    print(math.hypot(*Vector(1, 1, 1, 1)))
