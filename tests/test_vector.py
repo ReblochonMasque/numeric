@@ -316,6 +316,11 @@ class TestVector(unittest.TestCase):
         actual_id = id(actual)
         self.assertEqual(expected_id, actual_id)
 
+    def test_floordiv_0(self):
+        expected = Vector(0, 1, 2, 7)
+        actual = Vector(1, 4, 26/3, 21.5) // 3
+        self.assertEqual(expected, actual)
+
 
 class TestVector2D(unittest.TestCase):
 
