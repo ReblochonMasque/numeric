@@ -333,6 +333,12 @@ class TestVector(unittest.TestCase):
             _ = a // 0
         self.assertEqual(expected, str(e.exception))
 
+    def test_ifloordiv_0(self):
+        expected = Vector(0., -2., 0, 7)
+        actual = Vector(-1, 4, -7/3, -21)
+        actual //= -3
+        self.assertEqual(expected, actual)
+
 
 class TestVector2D(unittest.TestCase):
 
