@@ -197,7 +197,7 @@ class Vector(AbstractPointVector):
         :return: new Vector2D equal to self floor divided by divisor
         """
         if divisor == 0:
-            raise ValueError("cannot divide a Vector by zero")
+            raise ZeroDivisionError("cannot divide a Vector by zero")
         return self.__class__(*(coord // divisor for coord in self))
 
     def __ifloordiv__(self, divisor: Scalar) -> 'Vector':
