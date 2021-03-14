@@ -371,14 +371,14 @@ class TestVector(unittest.TestCase):
     def test_unit_vector_0(self):
         vec = Vector(0, -1, 7, 2)
         den = math.sqrt(sum(c*c for c in vec))
-        actual = vec.unit()
+        actual = vec.unit_vector()
         expected = Vector(0, -1/den, 7/den, 2/den)
         self.assertEqual(expected, actual)
 
     def test_unit_vector_1(self):
         vec = Vector(3.00, 4.00, -7, 8, 9.345678)
         den = math.sqrt(sum(c*c for c in vec))
-        actual = vec.unit()
+        actual = vec.unit_vector()
         expected = Vector(3.00/den, 4.00/den, -7/den, 8/den, 9.345678/den)
         self.assertEqual(expected, actual)
 
@@ -704,12 +704,12 @@ class TestVector2D(unittest.TestCase):
         self.assertEqual(expected, str(e.exception))
 
     def test_unit_vector_0(self):
-        actual = Vector2D(0, -1).unit()
+        actual = Vector2D(0, -1).unit_vector()
         expected = Vector2D(0, -1)
         self.assertEqual(expected, actual)
 
     def test_unit_vector_1(self):
-        actual = Vector2D(x=3.00, y=4.00).unit()
+        actual = Vector2D(x=3.00, y=4.00).unit_vector()
         expected = Vector2D(x=0.60, y=0.80)
         self.assertEqual(expected, actual)
 

@@ -34,7 +34,7 @@ def direction(event, _direct=deque([Point(0, 0) for _ in range(_maxlen)],
     """
     _direct.append(Point(event.x, event.y))
     p0, _, _, p1 = _direct  # skipping 2 points smoothens the movement a bit
-    draw_direction_vector(canvas, p1, (p1 - p0).unit())
+    draw_direction_vector(canvas, p1, (p1 - p0).unit_vector())
 
 
 if __name__ == '__main__':

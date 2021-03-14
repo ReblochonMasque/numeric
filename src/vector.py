@@ -219,7 +219,7 @@ class Vector(AbstractPointVector):
         self._coords = [coord // divisor for coord in self]
         return self
 
-    def unit(self) -> 'Vector':
+    def unit_vector(self) -> 'Vector':
         """calculates and returns the unique unit Vector in the direction of self
 
         :return: new Vector
@@ -375,7 +375,7 @@ if __name__ == '__main__':
 
     w = Vector2D(3, 4)
     print(w, w.mag())
-    print(a := w.unit(), a.mag())
+    print(a := w.unit_vector(), a.mag())
 
     p = Point(1, 2, 3, 4)
     v = Vector(1.0001, 2.009, 3.78987, 4.1)
