@@ -227,6 +227,14 @@ class Vector(AbstractPointVector):
         magnitude = self.mag()
         return self.__class__(*(coord / magnitude for coord in self))
 
+    def dot(self, other: 'Vector') -> Scalar:
+        """calculates and returns the dot product of self and other
+
+        :param other: Vector
+        :return: Scalar
+        """
+        return sum(c0 * c1 for c0, c1 in zip(self, other))
+
 
 class Vector2D(Vector):
 
@@ -263,14 +271,14 @@ class Vector2D(Vector):
         :return: a new Vector2D normal to self, pointing to the left (ccw)
         """
         return self.__class__(-self.y, self.x)
-
-    def dot(self, other: 'Vector2D') -> Scalar:
-        """calculates and returns the dot product of self and other
-
-        :param other: Vector2D
-        :return: Scalar
-        """
-        return sum(c0 * c1 for c0, c1 in zip(self, other))
+    #
+    # def dot(self, other: 'Vector2D') -> Scalar:
+    #     """calculates and returns the dot product of self and other
+    #
+    #     :param other: Vector2D
+    #     :return: Scalar
+    #     """
+    #     return sum(c0 * c1 for c0, c1 in zip(self, other))
 
     def perp_product(self, other) -> Scalar:
         """2D exterior product, or outer product: ad-bc
