@@ -664,6 +664,11 @@ class TestVector2D(unittest.TestCase):
         actual = abs(Vector2D(-1, 4))
         self.assertEqual(expected, actual)
 
+    def test_mag_0(self):
+        expected = math.sqrt(17)
+        actual = Vector2D(-1, 4).mag()
+        self.assertEqual(expected, actual)
+
     def test_dot_1(self):
         actual = Vector2D(1, 0).dot(Vector2D(0, 1))
         expected = 0
