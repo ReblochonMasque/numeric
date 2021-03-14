@@ -219,6 +219,14 @@ class Vector(AbstractPointVector):
         self._coords = [coord // divisor for coord in self]
         return self
 
+    def unit(self) -> 'Vector':
+        """calculates and returns the unique unit Vector in the direction of self
+
+        :return: new Vector
+        """
+        mag = abs(self)
+        return self.__class__(*(coord / mag for coord in self))
+
 
 class Vector2D(Vector):
 
@@ -247,13 +255,13 @@ class Vector2D(Vector):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    def unit(self) -> 'Vector2D':
-        """calculates and returns the unique unit vector in the direction of self
-
-        :return: new Vector2D
-        """
-        mag = abs(self)
-        return self.__class__(self.x / mag, self.y / mag)
+    # def unit(self) -> 'Vector2D':
+    #     """calculates and returns the unique unit vector in the direction of self
+    #
+    #     :return: new Vector2D
+    #     """
+    #     mag = abs(self)
+    #     return self.__class__(self.x / mag, self.y / mag)
 
     def perp(self) -> 'Vector2D':
         """2D Perp Operator
