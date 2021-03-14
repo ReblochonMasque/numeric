@@ -382,6 +382,11 @@ class TestVector(unittest.TestCase):
         expected = Vector(3.00/den, 4.00/den, -7/den, 8/den, 9.345678/den)
         self.assertEqual(expected, actual)
 
+    def test_dot_0(self):
+        actual = Vector(0, 0, 0, 1, 0).dot(Vector(0, 1, 0, 0, 0))
+        expected = 0
+        self.assertEqual(expected, actual)
+
     def test_dot_1(self):
         actual = Vector(1, 0, 0, 0).dot(Vector(0, 1, 0, 0))
         expected = 0
