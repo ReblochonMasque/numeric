@@ -375,6 +375,13 @@ class TestVector(unittest.TestCase):
         expected = Vector(0, -1/den, 7/den, 2/den)
         self.assertEqual(expected, actual)
 
+    def test_unit_vector_1(self):
+        vec = Vector(3.00, 4.00, -7, 8, 9.345678)
+        den = math.sqrt(sum(c*c for c in vec))
+        actual = vec.unit()
+        expected = Vector(3.00/den, 4.00/den, -7/den, 8/den, 9.345678/den)
+        self.assertEqual(expected, actual)
+
 
 class TestVector2D(unittest.TestCase):
 
