@@ -179,6 +179,17 @@ class Vector(AbstractPointVector):
             raise ZeroDivisionError("cannot divide a Vector by zero")
         return self.__class__(*(coord / divisor for coord in self))
 
+    def __itruediv__(self, divisor: Scalar) -> 'Vector':
+        """returns self divided by divisor
+
+        :param divisor: a Scalar
+        :return: mutated self
+        """
+        if divisor == 0:
+            raise ValueError
+        self._coords = [coord / divisor for coord in self]
+        return self
+
 
 class Vector2D(Vector):
 
@@ -207,17 +218,17 @@ class Vector2D(Vector):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    def __itruediv__(self, divisor: Scalar) -> 'Vector2D':
-        """returns self divided by divisor
-
-        :param divisor: a Scalar
-        :return: mutated self
-        """
-        if divisor == 0:
-            raise ValueError
-        self.x, self.y = self.x / divisor, self.y / divisor
-        self._coords = [self.x, self.y]
-        return self
+    # def __itruediv__(self, divisor: Scalar) -> 'Vector2D':
+    #     """returns self divided by divisor
+    #
+    #     :param divisor: a Scalar
+    #     :return: mutated self
+    #     """
+    #     if divisor == 0:
+    #         raise ValueError
+    #     self.x, self.y = self.x / divisor, self.y / divisor
+    #     self._coords = [self.x, self.y]
+    #     return self
 
     def __floordiv__(self, divisor: Scalar) -> 'Vector2D':
         """returns a new Vector2D equal to self floor scaled by divisor
