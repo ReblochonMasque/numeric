@@ -207,16 +207,6 @@ class Vector2D(Vector):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    # def __truediv__(self, divisor: Scalar) -> 'Vector2D':
-    #     """returns a new Vector2D equal to self scaled by divisor
-    #
-    #     :param divisor: a Scalar
-    #     :return: new Vector2D equal to self divided by divisor
-    #     """
-    #     if divisor == 0:
-    #         raise ValueError
-    #     return Vector2D(self.x / divisor, self.y / divisor)
-
     def __itruediv__(self, divisor: Scalar) -> 'Vector2D':
         """returns self divided by divisor
 
