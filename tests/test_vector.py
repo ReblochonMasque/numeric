@@ -600,6 +600,11 @@ class TestVector2D(unittest.TestCase):
         actual = Vector2D(26/3, 21.5) // 3
         self.assertEqual(expected, actual)
 
+    def test_floordiv_2(self):
+        expected = Vector2D(-2, 0)
+        actual = Vector2D(4, -7/3) // -3
+        self.assertEqual(expected, actual)
+
     def test_ifloordiv_0(self):
         expected = Vector2D(-1.//3., 4.//3.)
         actual = Vector2D(-1, 4)
