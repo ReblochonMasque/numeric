@@ -303,6 +303,12 @@ class TestVector(unittest.TestCase):
             _ = Vector(-1, 4, -7/3, -21) / 0
         self.assertEqual(expected, str(e.exception))
 
+    def test_itruediv_0(self):
+        expected = Vector(1./3., -4./3., 7/9, 7)
+        actual = Vector(-1, 4, -7/3, -21)
+        actual /= -3
+        self.assertEqual(expected, actual)
+
 
 class TestVector2D(unittest.TestCase):
 
