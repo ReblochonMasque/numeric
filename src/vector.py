@@ -176,7 +176,7 @@ class Vector(AbstractPointVector):
         :return: new Vector equal to self divided by divisor
         """
         if divisor == 0:
-            raise ZeroDivisionError
+            raise ZeroDivisionError("cannot divide a Vector by zero")
         return self.__class__(*(coord / divisor for coord in self))
 
 
