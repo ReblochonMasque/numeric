@@ -72,6 +72,11 @@ class TestVector(unittest.TestCase):
         actual = hash(Vector(0, 1, 0, 0))
         self.assertEqual(expected, actual)
 
+    def test_hash_2(self):
+        notexpected = hash((1, 0, 1, 0))
+        actual = hash(Vector(0, 1, 0, 1))
+        self.assertNotEqual(notexpected, actual)
+
     def test_bool_0(self):
         self.assertTrue(Vector(1, 12, 0, 1, 3))
 
@@ -83,11 +88,6 @@ class TestVector(unittest.TestCase):
 
     def test_bool_3(self):
         self.assertTrue(Vector(0, -2, -2, -2))
-
-    def test_hash_2(self):
-        notexpected = hash((1, 0, 1, 0))
-        actual = hash(Vector(0, 1, 0, 1))
-        self.assertNotEqual(notexpected, actual)
 
     def test_abs_0(self):
         expected = math.sqrt(70)
