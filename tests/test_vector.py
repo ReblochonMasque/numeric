@@ -542,6 +542,12 @@ class TestVector2D(unittest.TestCase):
         actual = Vector2D(-1, 4) / -3
         self.assertEqual(expected, actual)
 
+    def test_truediv_1(self):
+        expected = "cannot divide a Vector by zero"
+        with self.assertRaises(ZeroDivisionError) as e:
+            _ = Vector2D(-1, 4) / 0
+        self.assertEqual(expected, str(e.exception))
+
     def test_itruediv_0(self):
         expected = Vector2D(-1./3., 4./3.)
         actual = Vector2D(-1, 4)
