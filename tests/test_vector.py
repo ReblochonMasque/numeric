@@ -3,7 +3,7 @@ Tests Suite for Vector
 
 """
 
-
+import math
 import unittest
 
 from contextlib import redirect_stdout
@@ -658,6 +658,11 @@ class TestVector2D(unittest.TestCase):
             a = Vector2D(-1, 4)
             a //= 0
         self.assertEqual(expected, str(e.exception))
+
+    def test_abs_0(self):
+        expected = math.sqrt(17)
+        actual = abs(Vector2D(-1, 4))
+        self.assertEqual(expected, actual)
 
     def test_dot_1(self):
         actual = Vector2D(1, 0).dot(Vector2D(0, 1))
