@@ -186,7 +186,7 @@ class Vector(AbstractPointVector):
         :return: mutated self
         """
         if divisor == 0:
-            raise ValueError
+            raise ZeroDivisionError("cannot divide a Vector by zero")
         self._coords = [coord / divisor for coord in self]
         return self
 
@@ -199,6 +199,17 @@ class Vector(AbstractPointVector):
         if divisor == 0:
             raise ValueError("cannot divide a Vector by zero")
         return self.__class__(*(coord // divisor for coord in self))
+
+    def __ifloordiv__(self, divisor: Scalar) -> 'Vector':
+        """returns self floor divided by divisor
+
+        :param divisor: a Scalar
+        :return: mutated self
+        """
+        if divisor == 0:
+            raise ZeroDivisionError("cannot divide a Vector by zero")
+        self._coords = [coord // divisor for coord in self]
+        return self
 
 
 class Vector2D(Vector):
@@ -228,27 +239,17 @@ class Vector2D(Vector):
     def __repr__(self):
         return f'{self.__class__.__name__}(x={self.x}, y={self.y})'
 
-    # def __floordiv__(self, divisor: Scalar) -> 'Vector2D':
-    #     """returns a new Vector2D equal to self floor scaled by divisor
+    # def __ifloordiv__(self, divisor: Scalar) -> 'Vector2D':
+    #     """returns self floor divided by divisor
     #
     #     :param divisor: a Scalar
-    #     :return: new Vector2D equal to self floor divided by divisor
+    #     :return: mutated self
     #     """
     #     if divisor == 0:
     #         raise ValueError
-    #     return Vector2D(self.x // divisor, self.y // divisor)
-
-    def __ifloordiv__(self, divisor: Scalar) -> 'Vector2D':
-        """returns self floor divided by divisor
-
-        :param divisor: a Scalar
-        :return: mutated self
-        """
-        if divisor == 0:
-            raise ValueError
-        self.x, self.y = self.x // divisor, self.y // divisor
-        self._coords = [self.x, self.y]
-        return self
+    #     self.x, self.y = self.x // divisor, self.y // divisor
+    #     self._coords = [self.x, self.y]
+    #     return self
 
     def unit(self) -> 'Vector2D':
         """calculates and returns the unique unit vector in the direction of self
