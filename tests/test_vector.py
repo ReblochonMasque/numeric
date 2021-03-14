@@ -392,6 +392,11 @@ class TestVector(unittest.TestCase):
         expected = 0
         self.assertEqual(expected, actual)
 
+    def test_dot_2(self):
+        actual = Vector(1, 1, 1, 1, 1, 1).dot(Vector(2, 2, 2, 2, 2, 2))
+        expected = 12
+        self.assertEqual(expected, actual)
+
 
 class TestVector2D(unittest.TestCase):
 
