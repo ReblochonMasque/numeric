@@ -224,8 +224,8 @@ class Vector(AbstractPointVector):
 
         :return: new Vector
         """
-        mag = abs(self)
-        return self.__class__(*(coord / mag for coord in self))
+        magnitude = self.mag()
+        return self.__class__(*(coord / magnitude for coord in self))
 
 
 class Vector2D(Vector):
